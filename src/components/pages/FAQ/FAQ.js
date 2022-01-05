@@ -1,73 +1,110 @@
 import React, { useState } from 'react';
-import Footer from '../../Footer';
-import './FAQ.css';
-import FAQ from '../../Faq';
+import { Data } from './Data';
+import styled from 'styled-components';
+import { IconContext } from 'react-icons';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 import HeaderFAQ from '../../HeaderFAQ';
-function App() {
-  const [faqs, setfaqs] = useState([
-    {
-      question: 'When is FMC Weekend?',
-      answer: '9th to 11th April, 2021. But you can start participating right now by registering.',
-      open: true
-    },
-    {
-      question: 'Is the participation in events and workshops paid?',
-      answer:
-        'There a variety of passes of varied pocket- friendly prices that one can buy to participate in an event or attend a workshop.',
-      open: false
-    },
-    {
-      question:
-        "Is it possible to attend another genre's workshop while participating in one event?",
-      answer:
-        "No, for example, if you participate in one of the photography club's events, then you cannot attend a workshop of the design club. However, buying the All workshop pass allows you to participate in any and all workshops and the All Fest pass allows you to participate in any and all events and workshops.",
-      open: false
-    },
-    {
-      question: 'Who will be taking the workshop?',
-      answer:
-        "The details of the workshops can be checked on the website and the instagram page(@fmc_weekend) , so don't hold back and get your passes soon.",
-      open: false
-    },
-    {
-      question: 'Is the submission of previously clicked,written or made entries acceptable?',
-      answer:
-        'Yes, as long as the entry is free of plagiarism, any creation that has been made beforehand can be submitted.',
-      open: false
-    },
-    {
-      question: 'How does the leaderboard work?',
-      answer:
-        "Participants each receive a referral code which they distribute among their acquaintances who would receive a 10% discount on their pass prices. The leaderboard will display the number of times a referral code has been used and rank the participants accordingly. Whosoever's referral code is used the maximum number of times will receive cash prizes worth 3k.",
-      open: false
+import Footer from '../../Footer';
+const AccordionSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  background: #1d033e;
+`;
+
+const Container = styled.div`
+  position: absolute;
+  top: 5%;
+  color: #27094b;
+  max-width: 768px;
+`;
+
+const Wrap = styled.div`
+  background: #27094b;
+  color: #fcc907;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #6f5700;
+  margin: 15px;
+  border-radius: 10px;
+  position: relative;
+  h1 {
+    padding: 15px;
+    font-size: 20px;
+    font-family: Marcellus;
+  }
+  span {
+    margin-right: 1.5rem;
+  }
+`;
+
+const Dropdown = styled.div`
+  background: #27094b;
+  color: #fff;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  border: 1px solid #6f5700;
+  margin: 15px;
+  border-radius: 10px;
+
+  p {
+    font-size: 20px;
+    padding: 15px;
+    font-family: Nunito Sans;
+  }
+`;
+
+const Accordion = () => {
+  const [clicked, setClicked] = useState(false);
+
+  const toggle = (index) => {
+    if (clicked === index) {
+      //if clicked question is already active, then close it
+      return setClicked(null);
     }
-  ]);
 
-  const toggleFAQ = (index) => {
-    setfaqs(
-      faqs.map((faq, i) => {
-        if (i === index) {
-          faq.open = !faq.open;
-        } else {
-          faq.open = false;
-        }
-
-        return faq;
-      })
-    );
+    setClicked(index);
   };
 
   return (
-    <div className="App">
+    <div className="HEADER">
       <HeaderFAQ />
-      <div className="faqs">
-        {faqs.map((faq, i) => (
-          <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
-        ))}
+      <IconContext.Provider value={{ color: '#FCC907', size: '25px' }}>
+        <AccordionSection>
+          <Container>
+            {Data.map((item, index) => {
+              return (
+                <>
+                  <Wrap onClick={() => toggle(index)} key={index}>
+                    <h1>{item.question}</h1>
+                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+                  </Wrap>
+                  {clicked === index ? (
+                    <Dropdown>
+                      <p>{item.answer}</p>
+                    </Dropdown>
+                  ) : null}
+                </>
+              );
+            })}
+          </Container>
+        </AccordionSection>
+      </IconContext.Provider>
+      <div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
-}
+};
 
-export default App;
+export default Accordion;
