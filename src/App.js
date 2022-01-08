@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
@@ -15,13 +15,22 @@ import Outreach from './components/pages/Events/MobileView/Outreach';
 import Design from './components/pages/Events/MobileView/Design';
 import Media from './components/pages/Events/MobileView/Media';
 import Animation from './components/pages/Events/MobileView/Animation';
+import Authentication from './components/pages/Authentication/Authentication';
+import RegisterationForm from './components/pages/Register/RegisterationForm';
+import Dashboard from './components/pages/Dashboard/Dashboard';
+import AuthContext from './store/auth-context';
 function App() {
+
+  const authCtx = useContext(AuthContext);
+
+
+
   return (
     <>
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/landing" exact component={Home} />
+          {/* <Route path="/landing" exact component={Home} /> */}
           <Route path="/sign-up" component={SignUp} />;
           <Route path="/events" exact component={events} />;
           <Route path="/events/photography" component={Photography} />;
@@ -32,7 +41,12 @@ function App() {
           <Route path="/events/animation" component={Animation} />;
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/FAQ" component={FAQ} />
-          <Route path="/" component={landingPage} />
+          <Route path="/" exact component={landingPage} />          
+          <Route path="/authentication" exact component={Authentication} />
+          {/* {authCtx.isLoggedIn && <Route path="/dashboard" exact component={Dashboard} />} */}
+          <Route path="/register" exact component={RegisterationForm}/>
+          <Route path="/dashboard" exact component={Dashboard} />
+
         </Switch>
       </Router>
     </>
