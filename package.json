@@ -26,7 +26,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "set PORT=4200 && react-scripts start",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
     "eject": "react-scripts eject",
@@ -53,11 +53,15 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1"
   }
 }

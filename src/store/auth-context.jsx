@@ -11,7 +11,7 @@ const AuthContext = React.createContext({
   updateName: (name) => {},
   updateEmail: (email) => {},
   updateIsNewUser: (bool_val) => {},
-  updateUserType: (userType) => {} 
+  updateUserType: (userType) => {}
 });
 
 export const AuthContextProvider = (props) => {
@@ -20,23 +20,27 @@ export const AuthContextProvider = (props) => {
   const [email, setEmail] = useState('');
   const [isNewUser, setIsNewUser] = useState(false);
   const [userType, setUserType] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const isLoggedIn = !!token;
+  // const isLoggedIn = !!token;
 
-  const modifyToken = (token) => {
-      setToken(token);
-  }
+  const modifyToken = (token) => {    
+    console.log(token);
+    setToken(token);
+    setIsLoggedIn(!!token);
+    console.log(isLoggedIn)
+  };
 
   const modifyName = (name) => {
     setName(name);
-    // console.log(name);
+    console.log(name);
   };
   const modifyEmail = (email) => {
     setEmail(email);
   };
   const modifyIsNewUser = (bool_val) => {
-      setIsNewUser(bool_val);
-  }
+    setIsNewUser(bool_val);
+  };
   const modifyUserType = (userType) => {
     setUserType(userType);
   };

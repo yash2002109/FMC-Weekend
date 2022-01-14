@@ -1,11 +1,10 @@
-import { useContext, useState,useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
 import { Redirect } from 'react-router-dom';
 import AuthContext from '../../../store/auth-context';
 import Classes from './Authentication.module.css';
 
 function Authentication() {
-
   const authCtx = useContext(AuthContext);
 
   const [loginData, setLoginData] = useState(
@@ -21,50 +20,42 @@ function Authentication() {
     console.log(googleData);
     const profile = googleData.profileObj;
     const email = googleData.profileObj.email;
-    const name = googleData.profileObj.name;  
-    authCtx.updateName(name);
-    authCtx.updateEmail(email);  
-    localStorage.setItem('name', name);
-    localStorage.setItem('email', email);
+    const name = googleData.profileObj.name;
+    // authCtx.updateName(name);
+    // authCtx.updateEmail(email);
+    sessionStorage.setItem('name', name);
+    sessionStorage.setItem('email', email);
 
     // send request to backend api and check if the user already exists or is a new one
+    try {
+      //   const res = await fetch('/api/google-login', {
+      //     method: 'POST',
+      //     body: JSON.stringify({
+      //       token: googleData.tokenId
+      //     }),
+      //     headers: {
+      //       'Content-Type': 'application/json'
+      //     }
+      //   });
+      //   const data = await res.json();
+      //   console.log(data);
+      sessionStorage.setItem('tokenID', googleData.tokenId);
+      // authCtx.updateToken(googleData.tokenId)
+      // Update context with value of token
 
-    const res = await fetch('/api/google-login', {
-      method: 'POST',
-      body: JSON.stringify({
-        token: googleData.tokenId
-      }),
-      headers: {
-        'Content-Type': 'application/json'
+      // const isNewUser = data.user.newUser;
+      const isNewUser = true; // for trial purpose only // COMMENT THIS LINE
+
+      sessionStorage.setItem('isNewUser', isNewUser);
+
+      if (isNewUser) {
+        window.location.href = '/register';
+      } else {
+        window.location.href = '/dashboard';
       }
-    });
-    const data = await res.json();
-    // 
-    // Check if the user with email is new then redirect user to form to fill further credentials //setNewUser = true
-    // authCtx.updateIsNewUser(true);
-    // console.log(authCtx);
-    // update localstorage with user type participant/campusAmbassador/institute
-    console.log(data);
-    // if(data['message'])
-    sessionStorage.setItem('tokenID', googleData.tokenId);
-    const isNewUser = data.user.newUser;
-    localStorage.setItem("isNewUser", false);
-    if (isNewUser){        
-         window.location.href = "/register";         
-    } else {
-        // send request to backend to see if user is a valid and credentials exist
-        // if return code is 200 then set token
-        // authCtx.updateToken(token); // or setIsLoggedIn to be true
-        // authCtx.updateUserType = "participant" or "institute" if the email has @itbhu.ac.in or "campusAmbassador"        
-        // localStorage.setItem("userType", "institute");
-        window.location.href = "/dashboard";
+    } catch (error) {
+      alert('Unable to login using Google, Try again later!');
     }
-
-
-    // else if user already exists => res.status_code = 200 then fetch complete information from backend api and proceed directly to dashboard //setNewUser = false
-
-    // setLoginData(data);
-    // localStorage.setItem('loginData', JSON.stringify(data));
   };
 
   const handleLogout = (loginData) => {
@@ -88,9 +79,7 @@ function Authentication() {
             cookiePolicy="single_host_origin"></GoogleLogin>
         </div>
       )}
-      
     </div>
-   
   );
 }
 
