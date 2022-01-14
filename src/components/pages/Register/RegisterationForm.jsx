@@ -2,16 +2,43 @@ import { useContext } from 'react';
 import AuthContext from '../../../store/auth-context';
 import Classes from './Registeration.module.css';
 function RegisterationForm() {
+async function handleSubmit(e){
+	e.preventDefault();
+	let obj = {
+    email: e.target[1].value,
+		college: e.target[2].value,
+		number: e.target[3].value,
+		year: e.target[4].value,
+		redeem : e.target[5].value, 
+		instaHandle: e.target[6].value,
+		userType: e.target[7].value, //insti user usertype 0
+	};
 
+	const res = await fetch('api/user', {
+		method: "PATCH",
+		body: JSON.stringify(obj),
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+	const data = await res.json();
+  console.log(data);
+  if(data.message == 'success'){
+    window.location.href = "/dashboard"; 
+  }else{
+    alert('login failed, please try later')
+    // window.location.href = "/register"; 
+  }
+}
 const authCtx = useContext(AuthContext);
   return (      
       <div className={Classes.section}>
-    <form className={Classes.section}>
+    <form className={Classes.section} onSubmit={(e)=>handleSubmit(e)}>
       <div className={Classes.container}>
         <label for="name">
           <b>Name</b>
         </label>
-        <input type="text" name="name" value={localStorage.getItem('name')} required readonly/>
+        <input type="text" name="name" value={localStorage.getItem('name')} required readonly disabled/>
         <label for="email">
           <b>E-mail</b>
         </label>
@@ -28,17 +55,22 @@ const authCtx = useContext(AuthContext);
           <b>Year of Study</b>
         </label>
         <input type="text" name="year" placeholder="2nd" required/>
+        <label for="redeem">
+          <b>Referal Code</b>
+        </label>
+        <input type="text" name="redeem" placeholder="XXXXXX"/>
         <label for="name">
-          <b>Name</b>
+          <b>Instagram Handle</b>
         </label>
         <input type="text" name="name" placeholder="name" required/>
         <label for="position">
           <b>Wanna be a?</b>
         </label>
         <select name="position">
-            <option value="participant">Participant</option>
-            <option value="campusAmbassador">Campus Ambassador</option>
+            <option value="1">Participant</option>
+            <option value="2">Campus Ambassador</option>
         </select>
+        <button type='submit'>Submit</button>
       </div>
     </form>
     </div>
