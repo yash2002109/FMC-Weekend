@@ -33,7 +33,9 @@ function RegisterationForm() {
   const authCtx = useContext(AuthContext);
   return (
     <div className={Classes.section}>
-      <form className={Classes.section} onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className={`${Classes.section} ${Classes.form_class}`}
+        onSubmit={(e) => handleSubmit(e)}>
         <div className={Classes.container}>
           <label for="name">
             <b>Name</b>
@@ -69,6 +71,7 @@ function RegisterationForm() {
               required
             />
           )}
+
           <label for="phone">
             <b>Phone Number (+91)</b>
           </label>
@@ -82,7 +85,7 @@ function RegisterationForm() {
             <option value="3">III</option>
             <option value="4">IV</option>
             <option value="5">V</option>
-          </select>         
+          </select>
           <label for="redeem">
             <b>Referral Code</b>
           </label>
@@ -105,7 +108,9 @@ function RegisterationForm() {
               </Fragment>
             )}
           </select>
-          <button type="submit">Submit</button>
+          <div className={Classes.button_div}>
+            <button type="submit">Submit</button>
+          </div>
         </div>
       </form>
     </div>
