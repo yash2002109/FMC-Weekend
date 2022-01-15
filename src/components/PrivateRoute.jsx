@@ -26,6 +26,7 @@ const PrivateRoute = (props) => {
       isNewUser = true;
     } catch {
       alert('Error while Logging In');
+
     }
     return [isValid, isNewUser];
   };
@@ -37,6 +38,7 @@ const PrivateRoute = (props) => {
   } else if (props.path === '/dashboard' && isTokenValid()[0] && !isTokenValid()[1]) {
     return <Route path={props.path} component={props.component} />;
   } else {
+    sessionStorage.clear();
     window.location.href = '/authentication';
   }
 
