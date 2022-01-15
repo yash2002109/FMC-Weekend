@@ -43,7 +43,7 @@ function App() {
           <Route path="/authentication" exact component={Authentication} />
           {/* {authCtx.isLoggedIn && <Route path="/dashboard" exact component={Dashboard} />} */}
           {/* {sessionStorage.getItem('isNewUser')==="true" && <Route path="/register" exact component={RegisterationForm} />} */}
-          <PrivateRoute path="/register" component={RegisterationForm} />
+          <Route path="/register" component={RegisterationForm} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           {/* <Route path="/dashboard" exact component={Dashboard} /> */}
         </Switch>
