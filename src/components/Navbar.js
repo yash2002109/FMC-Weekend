@@ -70,7 +70,7 @@ function Navbar() {
             </li>
           </ul>
           {button && (
-            <Button isInternalLink={true} toLink="/sign-up" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>
+            <Button isInternalLink={true} toLink="/authentication" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>
               SIGN IN
             </Button>
           )}
