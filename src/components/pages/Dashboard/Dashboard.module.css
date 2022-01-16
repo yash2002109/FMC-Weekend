@@ -15,9 +15,13 @@
   text-transform: uppercase;
   /* font-size: 26px; */
   letter-spacing: 1px;
+  margin: 5px;
 
 }
 
+.section_accessible a {
+  color: #27094B;
+}
 
 .main {
   /* margin-top: 2%;

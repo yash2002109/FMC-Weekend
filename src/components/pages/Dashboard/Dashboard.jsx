@@ -3,8 +3,7 @@ import AuthContext from '../../../store/auth-context';
 import Classes from './Dashboard.module.css';
 
 function Dashboard() {
-  const authCtx = useContext(AuthContext);
-  const [val, setVal] = useState(0);
+
   const [userData, setUserData] = useState({
     name: 'John Doe',
     email: 'foo@foo.com',
@@ -14,22 +13,15 @@ function Dashboard() {
     instaHandle: '_blah_',
     userType: '0'
   });
-  const getUserType = (props) => {
+  const getUserData = () => {
     const token = sessionStorage.getItem('tokenID');
-    // ADD API CALL HERE TO DETERMINE THE TYPE OF USER
-
-    return 0;
-    // Return 0/1/2 depending on the user type;
-  };
-
-  const getUserData = (name, email) => {
     // ADD API CALL HERE TO GET THE RELEVANT DETAILS OF THE USER
   };
 
   useEffect(() => {
-    setVal(getUserType());
+    // When the  page loads fetch userdata
     // setUserData(getUserData())
-    console.log(val);
+    
   }, []);
 
   return (
@@ -37,7 +29,7 @@ function Dashboard() {
       <div className={Classes.container}>
         <h1>Dashboard</h1>
         <div className={`${Classes.section_accessible}`}>
-          {val == 0 && (
+          {userData.userType == 0 && (
             <Fragment>
               <h1>
                 <a href="#">Events</a>
@@ -48,48 +40,12 @@ function Dashboard() {
               </h1>
             </Fragment>
           )}
-          {val == 1 && (
+          {userData.userType == 1 && (
             <h1>
               <a href="#">Events</a>
             </h1>
           )}
         </div>
-
-        {/* <div class={`${Classes.sidenav} ${Classes.column_1}`}>
-          <div class={Classes.profile}>
-            <div class={Classes.name}>              
-              {userData.name}
-            </div>
-            <div class={Classes.job}>
-              {userData.userType==2 ? "Campus Ambassador" : "Participant"}              
-            </div>
-          </div>
-          {val == 0 && (
-            <div class={Classes.sidenav_url}>
-              <div class={Classes.url}>
-                <a href="#profile" class="active">
-                  Events
-                </a>
-                <hr align="center" />
-              </div>
-              <div class={Classes.url}>
-                <a href="#settings">Merchandise</a>
-                <hr align="center" />
-              </div>
-            </div>
-          )}
-          {val == 1 && (
-            <div class={Classes.sidenav_url}>
-              <div class={Classes.url}>
-                <a href="#profile" class="active">
-                  Events
-                </a>
-                <hr align="center" />
-              </div>
-            </div>
-          )}
-
-        </div> */}
       </div>
 
       <div className={`${Classes.main} ${Classes.column_2}`}>
