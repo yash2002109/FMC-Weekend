@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 const PrivateRoute = (props) => {
   const isTokenValid = async () => {
@@ -11,7 +12,7 @@ const PrivateRoute = (props) => {
       const res = await fetch('/api/verify-token', {
         method: 'POST',
         body: JSON.stringify({
-          token: token,
+          token: token
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -35,10 +36,12 @@ const PrivateRoute = (props) => {
 
   // Show the component only when the user is logged in
   // Otherwise, redirect the user to /signin page
-  isTokenValid().then((obj)=>{
+  isTokenValid().then((obj) => {
     const { isValid, isNewUser, userRole } = obj;
     if (props.path === '/register' && isValid && isNewUser) {
       return <Route path={props.path} component={props.component} />;
+    } else if (props.path === '/register' && isValid && !isNewUser) {
+      window.location.href = '/dashboard';
     } else if (props.path === '/dashboard' && isValid && !isNewUser) {
       return <Route path={props.path} component={props.component} />;
     } else {
