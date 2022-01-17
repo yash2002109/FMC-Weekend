@@ -37,11 +37,11 @@ function RegisterationForm() {
         className={`${Classes.section} ${Classes.form_class}`}
         onSubmit={(e) => handleSubmit(e)}>
         <div className={Classes.container}>
-          <label for="name">
+          <label htmlFor="name">
             <b>Name</b>
           </label>
           <input type="text" name="name" value={sessionStorage.getItem('name')} required readOnly />
-          <label for="email">
+          <label htmlFor="email">
             <b>E-mail</b>
           </label>
           <input
@@ -51,7 +51,7 @@ function RegisterationForm() {
             required
             readOnly
           />
-          <label for="college">
+          <label htmlFor="college">
             <b>University / College</b>
           </label>
           {sessionStorage.getItem('email').endsWith('@iitbhu.ac.in') ||
@@ -72,11 +72,11 @@ function RegisterationForm() {
             />
           )}
 
-          <label for="phone">
+          <label htmlFor="phone">
             <b>Phone Number (+91)</b>
           </label>
           <input type="tel" name="phone" required />
-          <label for="year">
+          <label htmlFor="year">
             <b>Year of Study</b>
           </label>
           <select name="year">
@@ -86,15 +86,15 @@ function RegisterationForm() {
             <option value="4">IV</option>
             <option value="5">V</option>
           </select>
-          <label for="redeem">
+          <label htmlFor="redeem">
             <b>Referral Code</b>
           </label>
           <input type="text" name="redeem" placeholder="XXXXXX" />
-          <label for="insta">
+          <label htmlFor="insta">
             <b>Instagram Handle</b>
           </label>
           <input type="text" name="insta" placeholder="" required />
-          <label for="position">
+          <label htmlFor="position">
             <b>Wanna be a?</b>
           </label>
           <select name="position">
