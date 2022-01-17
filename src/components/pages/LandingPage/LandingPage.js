@@ -4,11 +4,56 @@ import sectionImage from '../../bg.png';
 import Section from './Section/Section';
 import Classes from './LandingPage.module.css';
 import Footer from '../../Footer';
-
+import { Button } from '../../Button';
+import { useState, useEffect } from 'react';
 function landingPage() {
+  const [button, setButton] = useState(true);
+
+  const showButton = () => {
+    if (window.innerWidth > 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton();
+  }, []);
+  
+  const logoutHandler = () => {
+    sessionStorage.clear();
+    window.location.href ="/";
+    closeMobileMenu();
+  }
+
   return (
     <div className={Classes.landing_page}>
       {/* <h1> Landing Page</h1> */}
+      <div className={Classes.login_button}>
+        {/* <Button /> */}
+        {button && !sessionStorage.getItem('tokenID') && (
+          <Button
+            isInternalLink={true}
+            toLink="/authentication"
+            buttonStyle="btn--primary"
+            className="nav-links sign"
+          >
+            SIGN IN
+          </Button>
+        )}        
+        {button && sessionStorage.getItem('tokenID') && (
+          <Button
+            isInternalLink={true}
+            toLink="/"
+            buttonStyle="btn--primary"
+            className="nav-links sign"
+            onClick={logoutHandler}>
+            SIGN OUT
+          </Button>
+        )}
+      </div>
+      
       <Banner imagePath={Image} />
       <Section title="ABOUT US" imagePath={sectionImage} buttonText="KNOW MORE">
         After weeks of speculation, uncertainty and postponement, the FMC Weekend is back with a
