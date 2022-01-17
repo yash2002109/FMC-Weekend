@@ -16,7 +16,9 @@
     justify-content: center;
     align-items: center;
     height: 80px;
+    width: 100vw;
     max-width: 1500px;
+    /* padding-left: 15vw; */
   }
   
   .navbar-logo {
@@ -50,6 +52,7 @@
     height: 80px;
   }
   .img{
+    margin-top: -15px;
     height: 120px;
     width: 130px;
   }
@@ -68,7 +71,7 @@
     line-height: 25px;
     margin-right: 10px;
   }
-  
+
   .nav-links:hover {
     color: #FCC907;
     transition: all 0.2s ease-out;
@@ -153,7 +156,8 @@
       font-size: 2rem;
     }
     .img{
-      margin-right:350px;
+      margin-right:75vw;
+      margin-left: 2vw;
     }
   
     .fa-bars {
