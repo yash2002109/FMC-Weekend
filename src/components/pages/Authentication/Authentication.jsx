@@ -13,6 +13,7 @@ function Authentication() {
   const [IsnewUser, setIsNewUser] = useState(true);
 
   const handleFailure = (result) => {
+    // alert('Unable to login using Google, Try again later!');
     console.log(result);
   };
 
@@ -59,26 +60,20 @@ function Authentication() {
   };
 
   const handleLogout = (loginData) => {
-    localStorage.removeItem('loginData');
+    sessionStorage.removeItem('loginData');
   };
   return (
     <div className={Classes.auth_section}>
       {/* <h1>Hello World!</h1> */}
-      {loginData ? (
-        <div>
-          <h3>You are logged in as {loginData.email}</h3>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <div ClassName={Classes.authenticateButton}>
-          <GoogleLogin
-            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-            buttonText="Log in with Google"
-            onSuccess={handleLogin}
-            onFailure={handleFailure}
-            cookiePolicy="single_host_origin"></GoogleLogin>
-        </div>
-      )}
+      <div className={Classes.authenticateButton}>
+        <GoogleLogin
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+          buttonText="Sign in with Google"
+          onSuccess={handleLogin}
+          onFailure={handleFailure}
+          cookiePolicy="single_host_origin"></GoogleLogin>
+      </div>
+      )
     </div>
   );
 }
