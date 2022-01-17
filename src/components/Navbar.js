@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from './navlogo.png';
+import AuthContext  from '../store/auth-context';
 
 function Navbar() {
+  const authCtx = useContext(AuthContext);
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -73,7 +76,7 @@ function Navbar() {
             <Button isInternalLink={true} toLink="/authentication" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>
               SIGN IN
             </Button>
-          )}
+          )}    
         </div>
       </nav>
     </>
