@@ -21,12 +21,14 @@ function RegisterationForm() {
         'Content-Type': 'application/json'
       }
     });
+    console.log({obj})
     const data = await res.json();
     console.log(data);
-    if (data.message == 'success') {
+    if (data.message === 'success') {
       window.location.href = '/dashboard';
     } else {
-      alert('login failed, please try later');
+      // alert('login failed, please try later');
+      alert(data.message);
       // window.location.href = "/register";
     }
   }

@@ -29,23 +29,23 @@ function Authentication() {
 
     // send request to backend api and check if the user already exists or is a new one
     try {
-      //   const res = await fetch('/api/google-login', {
-      //     method: 'POST',
-      //     body: JSON.stringify({
-      //       token: googleData.tokenId
-      //     }),
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   });
-      //   const data = await res.json();
-      //   console.log(data);
+        const res = await fetch('/api/google-login', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: googleData.tokenId
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const data = await res.json();
+        console.log(data);
       sessionStorage.setItem('tokenID', googleData.tokenId);
       // authCtx.updateToken(googleData.tokenId)
       // Update context with value of token
 
-      // const isNewUser = data.user.newUser;
-      const isNewUser = true; // for trial purpose only // COMMENT THIS LINE
+      const isNewUser = data.user.newUser;
+      // const isNewUser = true; // for trial purpose only // COMMENT THIS LINE
 
       sessionStorage.setItem('isNewUser', isNewUser);
 
@@ -73,7 +73,6 @@ function Authentication() {
           onFailure={handleFailure}
           cookiePolicy="single_host_origin"></GoogleLogin>
       </div>
-      )
     </div>
   );
 }
