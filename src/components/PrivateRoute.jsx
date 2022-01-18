@@ -18,34 +18,36 @@ const PrivateRoute = (props) => {
     const isTokenValid = async () => {
       setIsLoading(true);
       const token = sessionStorage.getItem('tokenID');
-      // try {
-      //   const res = await fetch('/api/verify-token', {
-      //     method: 'POST',
-      //     body: JSON.stringify({
-      //       token: token
-      //     }),
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   });
-      //   const data = await res.json();
-      //   userRole = data;
-      //   // data has message : 'success' if valid and 'invalid' else
-      //   // on valid, data also has user.email, user.name, user.isNewUser, user.role
-      //   if (data.message === 'success') {
-      //     isValid = true;
-      //     isNewUser = data.user.isNewUser;
-      //     userRole = data.user.role;
-      //   }
-      // } catch {
-      //   console.log('Error with authentication, login again');
-      // }
+      try {
+        const res = await fetch('/api/verify-token', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: token
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const data = await res.json();
+
+        // data has message : 'success' if valid and 'invalid' else
+        // on valid, data also has user.email, user.name, user.isNewUser, user.role
+        if (data.message === 'success') {
+          console.log(data)
+          setIsValid(true);
+          setIsNewUser(data.isNewUser); //data.user.isNewUser
+          // userRole = data.user.role;
+        }
+      } catch {
+        console.log('Error with authentication, login again');
+      }
       
-      await sleep(5000);
-      let data = [true, true, true];
-      setIsValid(data[0]);
-      setIsNewUser(data[1]);
+      // await sleep(5000);
+      // let data = [true, true, true];
+      // setIsValid(data[0]);
+      // setIsNewUser(data[1]);
       setIsLoading(false);
+
     };
     isTokenValid();
 
