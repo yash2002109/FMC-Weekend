@@ -37,14 +37,14 @@ function Dashboard() {
         if (data.message === 'success') {
           console.log(data);
           setUserData((prevState) => ({
-            ...prevState,
-            name: data.name,
-            email: data.email,
-            college: data.college,
-            phone: data.number,
-            year: data.yearOfStudy,
-            instaHandle: data.instaHandle,
-            userType: data.role
+            // ...prevState,
+            name: data.user.name,
+            email: data.user.email,
+            college: data.user.college,
+            phone: data.user.number,
+            year: data.user.yearOfStudy,
+            instaHandle: data.user.instaHandle,
+            userType: data.user.role
           }));
         }
       } catch {
