@@ -8,9 +8,9 @@ import './events.css';
 // import unicorn from "./assets/test.png";
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
+// import addToCart from './CartModal';
 
-// https://github.com/siddharthkp/react-vanilla-tilt
-
+import { useCart } from "react-use-cart";
 
 
 const CardTitle = styled.h3`
@@ -18,7 +18,8 @@ const CardTitle = styled.h3`
 `;
 
 
-export default function EventCard(props) {
+const EventCard = (props) => {
+  const { addItem } = useCart(); 
   const options = {
     reverse: true,
     max: 15,
@@ -27,7 +28,7 @@ export default function EventCard(props) {
     perspective: 1000,
     scale: 1.06
   }
-
+  
   return (
     <Tilt className="event-card" options={options}>
       <div>
@@ -38,13 +39,16 @@ export default function EventCard(props) {
           <div className="line"></div>
         </div>
         <CardTitle className="card-title">{props.title}</CardTitle>
+        <a href={props.link} className="btn1">Problem Statement</a>
       </div>
-      <a href="#" className="btn1">{props.link}</a>
+      <button className="cart-btn" onClick={() =>addItem(props.item)}>Add to Cart <i class="fas fa-arrow-right"></i></button>
     </Tilt>
   );
 }
 EventCard.defaultProps = {
   type: 'Contest',
   title: "That’s How B’roll",
-  link: "Problem Statement"
+  link: "Problem Statement",
+  price: 150
 };
+export default EventCard;

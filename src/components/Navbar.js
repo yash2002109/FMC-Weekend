@@ -1,15 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from './navlogo.png';
+import AuthContext  from '../store/auth-context';
+
+
 
 function Navbar() {
+  const authCtx = useContext(AuthContext);
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const logoutHandler = () => {
+    sessionStorage.clear();
+    window.location.href ="/";
+    closeMobileMenu();
+  }
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -38,7 +50,7 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className="nav-item">
+            <li className="nav-item first_item">
               <Link to="/events" className="nav-links" onClick={closeMobileMenu}>
                 EVENTS
               </Link>
@@ -69,11 +81,16 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && (
+          {button && !(sessionStorage.getItem('tokenID')) && (
             <Button isInternalLink={true} toLink="/authentication" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>
               SIGN IN
             </Button>
-          )}
+          )}    
+          {button && (sessionStorage.getItem('tokenID')) && (
+            <Button isInternalLink={true} toLink="/" buttonStyle='btn--primary' className="nav-links sign" onClick={logoutHandler}>
+              SIGN OUT
+            </Button>
+          )}    
         </div>
       </nav>
     </>

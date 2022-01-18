@@ -46,6 +46,7 @@ function App() {
           <PrivateRoute path="/register" component={RegisterationForm} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           {/* <Route path="/dashboard" exact component={Dashboard} /> */}
+
         </Switch>
       </Router>
     </>
