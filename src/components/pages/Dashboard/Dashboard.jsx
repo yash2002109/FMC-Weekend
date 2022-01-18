@@ -5,6 +5,7 @@ import Classes from './Dashboard.module.css';
 
 function Dashboard() {
   const [isLoading, setIsLoading] = useState(false);
+  const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
   const [userData, setUserData] = useState({
     name: 'John Doe',
     email: 'foo@foo.com',
@@ -35,7 +36,16 @@ function Dashboard() {
         // on valid, data also has user.email, user.name, user.isNewUser, user.role
         if (data.message === 'success') {
           console.log(data);
-          setUserData(data.user);
+          setUserData((prevState) => ({
+            ...prevState,
+            name: data.name,
+            email: data.email,
+            college: data.college,
+            phone: data.number,
+            year: data.yearOfStudy,
+            instaHandle: data.instaHandle,
+            userType: data.role
+          }));
         }
       } catch {
         alert('Error with authentication, login again');
