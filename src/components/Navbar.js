@@ -5,8 +5,6 @@ import './Navbar.css';
 import logo from './navlogo.png';
 import AuthContext  from '../store/auth-context';
 
-
-
 function Navbar() {
   const authCtx = useContext(AuthContext);
 
