@@ -4,7 +4,7 @@ import "./Loading.css";
 function Loading() {
   return (
     <div className="loading_div">
-      <CircularProgress />
+      <CircularProgress color='inherit'/>
     </div>
   );
 }
