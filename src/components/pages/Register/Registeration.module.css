@@ -1,4 +1,3 @@
-
 .section {
   padding-top: clamp(220px, 26vh, 100px);
   
@@ -87,12 +86,10 @@ input, select, option{
   width: 100%;
   text-align: right;
 }
-
 .form_group_2_div input,.form_group_2_div select, .form_group_2_div option,.form_group_2_div label {
   width: 40%;
   text-align: center;
 }
-
 .form_group_2_div label{
   text-align: right;
 } */

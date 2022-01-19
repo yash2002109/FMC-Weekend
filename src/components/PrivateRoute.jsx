@@ -1,47 +1,72 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Error from './Error';
+import Loading from './Loading';
+// var isValid = false;
+// var isNewUser = false;
+// var userRole = -1;
 
 const PrivateRoute = (props) => {
-  const isTokenValid = () => {
-    let isValid = false;
-    let isNewUser = false;
-    const token = sessionStorage.getItem('tokenID');
-    try {
-      //   const res = await fetch('/api/google-login', {
-      //     method: 'POST',
-      //     body: JSON.stringify({
-      //       token: token
-      //     }),
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   });
-      //   const data = await res.json();
-      //   console.log(data);
+  const [isValid, setIsValid] = useState(false);
+  const [isNewUser, setIsNewUser] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-      //   isNewUser = data.user.newUser;
+  const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
-      // set the state whether the token is valid or not and return that
-      isValid = true; // testing purpose
-      isNewUser = true;
-    } catch {
-      alert('Error while Logging In');
+  useEffect(() => {
+    const isTokenValid = async () => {
+      setIsLoading(true);
+      const token = sessionStorage.getItem('tokenID');
+      try {
+        const res = await fetch('/api/verify-token', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: token
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const data = await res.json();
 
-    }
-    return [isValid, isNewUser];
-  };
+        // data has message : 'success' if valid and 'invalid' else
+        // on valid, data also has user.email, user.name, user.isNewUser, user.role
+        if (data.message === 'success') {
+          console.log(data)
+          setIsValid(true);
+          setIsNewUser(data.isNewUser); //data.user.isNewUser
+          // userRole = data.user.role;
+        }
+      } catch {
+        console.log('Error with authentication, login again');
+      }
+      
+      // await sleep(5000);
+      // let data = [true, true, true];
+      // setIsValid(data[0]);
+      // setIsNewUser(data[1]);
+      setIsLoading(false);
 
-  // Show the component only when the user is logged in
-  // Otherwise, redirect the user to /signin page
-  if (props.path === '/register' && isTokenValid()[0] && isTokenValid()[1]) {
-    return <Route path={props.path} component={props.component} />;
-  } else if (props.path === '/dashboard' && isTokenValid()[0] && !isTokenValid()[1]) {
-    return <Route path={props.path} component={props.component} />;
-  } else {
-    sessionStorage.clear();
-    window.location.href = '/authentication';
+    };
+    isTokenValid();
+
+    // console.log(isTokenValid());
+  }, []);
+
+
+  if (props.path == '/register') {
+    return (
+      <Route path={props.path} component={(isLoading ? Loading : (isNewUser && isValid ? props.component : Error))}></Route>
+    );
+  } else if (props.path == '/dashboard') {
+
+    return (
+      <Route path={props.path} component={(isLoading ? Loading : (!isNewUser && isValid ? props.component : Error))}></Route>
+    );
   }
 
+  // return null;
 };
 
 export default PrivateRoute;

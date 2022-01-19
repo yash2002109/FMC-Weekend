@@ -3,19 +3,19 @@ import MobileLayout from './MobileLayout';
 import SideBar from '../../Sidebar';
 import './events.css';
 import Footer from '../../Footer';
-// import EventTab from './Photography/EventTab';
-// import Drawer from '../../Drawer';
+import CartModal from './CartModal';
 function Events() {
   return (
     <div>
+      <CartModal />
       <div className="sidebar">
         <SideBar />
         <Footer />
       </div>
       <div className="showOnMobile">
         <MobileLayout />
+        <Footer />
       </div>
-      
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import './events.css';
+import CartModal from './CartModal';
+
 function MobileLayout() {
     return (
         <div className="mobile">

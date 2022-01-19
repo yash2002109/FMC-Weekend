@@ -10,6 +10,8 @@ import EventCard from './pages/Events/EventCard';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import Card from '../../src/components/pages/Sponsors/SponsorSection/Card';
+import data from './pages/Events/Data/data';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -64,19 +66,17 @@ export default function VerticalTabs() {
         <Tab label="Media" {...a11yProps(3)} />
         <Tab label="Design" {...a11yProps(4)} />
         <Tab label="Animation" {...a11yProps(5)} />
+        <Tab label="All Events and Workshops" {...a11yProps(6)} />
       </Tabs>
 
       <TabPanel value={value} index={0} className="tab-panel">
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard
-              title="Infocus"
-              content="Uphold the saying “A picture is worth a thousand words” by clicking captivating and surreal theme-based images. Of the themes provided, choose one or more themes and click a photograph best representing them."
-              img="https://fmcweekend-angrycder.vercel.app/assets/events/photog1.jpg"
-              className="event"
-            />
-          )}
+          {data.photographyData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
 
             <div className="workshop-cards">
@@ -89,9 +89,11 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={1}>
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+        {data.cineData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
           
             <div className="workshop-cards">
@@ -105,9 +107,11 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={2}>
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+        {data.outreachData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
           
             <div className="workshop-cards">
@@ -121,9 +125,11 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={3}>
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+        {data.mediaData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
             <div className="workshop-cards">
           {Array(3).fill(
@@ -136,9 +142,11 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={4}>
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+        {data.designData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
           
             <div className="workshop-cards">
@@ -152,9 +160,11 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={5}>
         <div className="card-container">
         <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+        {data.animationData.map((item, index) => {
+            return (
+              <EventCard img={item.img} title={item.title} type={item.type} link={item.link} price={item.price} item={item} key={index} />
+            )
+          })}
           </div>
             <div className="workshop-cards">
           {Array(3).fill(
@@ -162,6 +172,14 @@ export default function VerticalTabs() {
           )}
           </div>
         </div>
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <div className="card-container">
+          <div className='all-events'>
+        <EventCard title="All Events" />
+        <EventCard title="All Workshops" />
+        </div>
+</div>
       </TabPanel>
     </Box>
   );
