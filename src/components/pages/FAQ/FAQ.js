@@ -5,13 +5,16 @@ import { IconContext } from 'react-icons';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import HeaderFAQ from '../../HeaderFAQ';
 import Footer from '../../Footer';
+import './FAQ.css';
+
 const AccordionSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 100vh;
+  height: 110vh;
+  width: 90vw;
   background: #1d033e;
 `;
 
@@ -19,7 +22,7 @@ const Container = styled.div`
   position: absolute;
   top: 5%;
   color: #27094b;
-  max-width: 768px;
+  max-width: 786px;
 `;
 
 const Wrap = styled.div`
@@ -80,7 +83,7 @@ const Accordion = () => {
     <div className="HEADER">
       <HeaderFAQ />
       <IconContext.Provider value={{ color: '#FCC907', size: '25px' }}>
-        <AccordionSection>
+        <AccordionSection className="accordion">
           <Container>
             {Data.map((item, index) => {
               return (

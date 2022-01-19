@@ -39,7 +39,7 @@ const EventCard = (props) => {
           <div className="line"></div>
         </div>
         <CardTitle className="card-title">{props.title}</CardTitle>
-        <a href={props.link} className="btn1">Problem Statement</a>
+        <a href={props.link} target="_blank" className="btn1" rel="noreferrer">{props.ps}</a>
       </div>
       <button className="cart-btn" onClick={() =>addItem(props.item)}>Add to Cart <i class="fas fa-arrow-right"></i></button>
     </Tilt>
@@ -48,7 +48,7 @@ const EventCard = (props) => {
 EventCard.defaultProps = {
   type: 'Contest',
   title: "That’s How B’roll",
-  link: "Problem Statement",
+  ps: "Problem Statement",
   price: 150
 };
 export default EventCard;

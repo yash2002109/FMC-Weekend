@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   font-style: Nunito Sans;
+  overflow-x: hidden;
+  z-index: 999;
 }
 
 /* Social Icons */
@@ -15,19 +17,19 @@
 }
 .facebook {
   padding: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 .instagram {
   padding: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 .youtube {
   padding: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 .linkedin {
   padding: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 .footer {
@@ -61,10 +63,12 @@
   padding: 8rem 0rem 1rem 4rem;
   width: 100%;
   vertical-align: center;
+  text-align: center;
 }
 
-.footer h3 {
+.footer h3, h2 {
   color: #fcc907;
+  font-size: 1.2em;
 }
 
 .sub-footer {
@@ -77,15 +81,79 @@
 
 .tab {
   display: inline-block;
-  margin-left: 400px;
+  margin-left: 30vw;
 }
 
 .image {
-  height: 270px;
-  width: 480px;
+  height: 40vh;
+  width: 30vw;
+  border-left: 2px solid #FCC907;
+  border-right: 2px solid #FCC907;
+  padding: 40px;
 }
 
 .powered {
   height: 150px;
   width: 150px;
+}
+@media screen and (max-width: 768px) {
+  .powered {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer {
+    margin: auto;
+  }
+  .footer section3 {
+    display: flex;
+  }
+  .image {
+    height: 200px;
+    width: 200px;
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid hsl(48, 98%, 51%);
+  border-bottom: 2px solid #FCC907;
+    padding: 30px;
+    margin-top: 60px;
+    /* margin-right: 20px; */
+  }
+  .footer section2 {
+    display: flex;
+    margin-right: 200px;
+    margin-top: 300px;
+  }
+  .footer section2 h3{
+    position: absolute;
+    right: 1%;
+    padding: 30px;
+    font-size: 1em;
+  }
+  .footer section2 h2{
+    /* margin-left: -340px; */
+    position: absolute;
+    left: 1%;
+    padding: 30px;
+    font-size: 1em;
+  }
+  .footer section5 {
+  }
+  .footer section5 h3{
+    /* padding: 20px; */
+    margin-top: -100px;
+    left: 40%;
+    position: absolute;
+    /* margin: auto; */
+    font-size: 1em;
+  }
+  .social-icon-link {
+    color: #fcc907;
+    font-size: 25px;
+  }
+  .footer section {
+    /* padding: 20px; */
+  }
+  .tab {
+    display: inline-block;
+  }
 }

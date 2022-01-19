@@ -54,11 +54,13 @@ const PrivateRoute = (props) => {
     // console.log(isTokenValid());
   }, []);
 
+
   if (props.path == '/register') {
     return (
       <Route path={props.path} component={(isLoading ? Loading : (isNewUser && isValid ? props.component : Error))}></Route>
     );
   } else if (props.path == '/dashboard') {
+
     return (
       <Route path={props.path} component={(isLoading ? Loading : (!isNewUser && isValid ? props.component : Error))}></Route>
     );
