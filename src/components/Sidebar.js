@@ -66,6 +66,7 @@ export default function VerticalTabs() {
         <Tab label="Media" {...a11yProps(3)} />
         <Tab label="Design" {...a11yProps(4)} />
         <Tab label="Animation" {...a11yProps(5)} />
+        <Tab label="All Events and Workshops" {...a11yProps(6)} />
       </Tabs>
 
       <TabPanel value={value} index={0} className="tab-panel">
@@ -171,6 +172,14 @@ export default function VerticalTabs() {
           )}
           </div>
         </div>
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <div className="card-container">
+          <div className='all-events'>
+        <EventCard title="All Events" />
+        <EventCard title="All Workshops" />
+        </div>
+</div>
       </TabPanel>
     </Box>
   );

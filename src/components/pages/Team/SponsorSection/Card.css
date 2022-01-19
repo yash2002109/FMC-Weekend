@@ -1,0 +1,94 @@
+.parent_wrapper {
+
+  width: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-left: calc(vw);
+  /* align-items: center; */
+  
+
+}
+.position {
+  margin-top: 10px;
+}
+.team-card {
+  /* width: 33vw; */
+  width: calc(100px +10vw);
+  max-width: 300px;
+  /* mix-blend-mode: multiply; merges image with the page background */
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 380px;
+  transition: 0.3s;
+  border-radius: 5px;
+  /* flex: 1 0 500px; */
+  flex: 2 2 auto;
+  box-sizing: border-box;
+  /* margin: 1rem 0.25em; */
+  margin: 20px;
+  /* 5px rounded corners */
+  color:#FCC907;
+  background: #27094B;
+  font-family: Nunito Sans;
+  text-align: center;
+  overflow-x: hidden;
+}
+.team-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: all 0.4s ease;
+}
+.team-card h3 {
+  font-family: Marcellus;
+}
+/* Add rounded corners to the top left and the top right corner of the image */
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  text-align: center;
+  background: white;
+}
+
+.separator{
+  display:flex;
+  align-items: center;
+}
+
+.separator .line{
+  height: 1px;
+  flex: 1;
+  margin: 15px;
+  background-color: #FCC907;
+}
+
+.separator h2{
+  font-family: Marcellus;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 400;
+  color: #FCC907;
+  line-height: 20px;
+  letter-spacing: 0em;
+  margin-top: 20px;
+}
+.card-img {
+  object-fit: cover;
+  position: relative;
+  height: 290px;
+  width: 100%;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+.card-img img:hover {
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+@media screen and (max-width: 700px) {
+  .team-card {
+    /* max-width: calc(45% - 1em); */
+    width: 60vw;
+  }
+  .parent_wrapper{
+    width: 100%;
+  }
+}

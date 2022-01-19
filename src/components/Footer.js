@@ -22,20 +22,15 @@ function Footer() {
             <h3>PRESENTS</h3>
           </section5>
           <section>
-            <img src={logo} className="image" alt="FMC" />
+            <img src="/fmc_logo.png" className="image" alt="FMC" />
           </section>
           <section2>
-            <h3>POWERED BY</h3>
+            <h2>POWERED BY</h2>
             <br></br>
             <br></br>
             <br></br>
             <h3>CO-POWERED BY</h3>
           </section2>
-          <section3>
-            <img src={temp} className="powered" alt="logo" />
-
-            <img src={temp} className="powered" alt="logo" />
-          </section3>
         </div>
       </footer>
 

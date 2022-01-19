@@ -4,7 +4,6 @@ import SideBar from '../../Sidebar';
 import './events.css';
 import Footer from '../../Footer';
 import CartModal from './CartModal';
-import { CartProvider } from 'react-use-cart';
 function Events() {
   return (
     <div>
@@ -15,6 +14,7 @@ function Events() {
       </div>
       <div className="showOnMobile">
         <MobileLayout />
+        <Footer />
       </div>
     </div>
   );

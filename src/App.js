@@ -20,6 +20,9 @@ import RegisterationForm from './components/pages/Register/RegisterationForm';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import AuthContext from './store/auth-context';
 import PrivateRoute from './components/PrivateRoute';
+import Team from './components/pages/Team/Teams';
+import Merchandise from './components/pages/Merchandise/Merchandise';
+
 function App() {
   const authCtx = useContext(AuthContext);
 
@@ -45,7 +48,8 @@ function App() {
           {/* {sessionStorage.getItem('isNewUser')==="true" && <Route path="/register" exact component={RegisterationForm} />} */}
           <PrivateRoute path="/register" component={RegisterationForm} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
-          {/* <Route path="/dashboard" exact component={Dashboard} /> */}
+          <Route path="/team" exact component={Team} />
+          <Route path="/merchandise" exact component={Merchandise} />
         </Switch>
       </Router>
     </>
