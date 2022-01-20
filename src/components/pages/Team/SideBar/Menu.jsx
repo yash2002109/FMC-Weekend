@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 /*
  * We will include our MenuItem Component
  */
-import MenuItem from "./MenuItem";
+import MenuItem from './MenuItem';
 
 /*
  * The list of our Menu Titles (Sections) as keys, with their
@@ -17,25 +17,37 @@ const menuItems = {
   sponsor_2: null,
   sponsor_3: null,
   sponsor_4: null,
+  sponsor_5: null,
+  sponsor_6: null,
+  sponsor_7: null,
+  sponsor_8: null,
+  sponsor_9: null,
+  sponsor_10: null
 };
 
 const menuItemNames = {
   // sponsors: "Sponsors",
-  sponsor_1: "Sponsor 1",
-  sponsor_2: "Sponsor 2",
-  sponsor_3: "Sponsor 3",
-  sponsor_4: "Sponsor 4",
+  sponsor_1: 'Marketing',
+  sponsor_2: 'Publicity',
+  sponsor_3: 'Public Relations',
+  sponsor_4: 'Social Media',
+  sponsor_5: 'Tech',
+  sponsor_6: 'Design',
+  sponsor_7: 'Event',
+  sponsor_8: 'Convenors',
+  sponsor_9: 'General Secretary',
+  sponsor_10: 'Secretaries'
 };
 
 /*
  * Our menu component
  */
-const Menu = () => {
+function Menu() {
   /*
    * Store the active menuItem in state to force update
    * when changed
    */
-  const [activeItem, setActiveItem] = useState("sponsor_1");
+  const [activeItem, setActiveItem] = useState('sponsor_1');
   /*
    * The MutationObserver allows us to watch for a few different
    * events, including page resizing when new elements might be
@@ -45,15 +57,15 @@ const Menu = () => {
    * on our user's scroll depth
    */
   useEffect(() => {
-    setTimeout(getAnchorPoints, 1000);
+    getAnchorPoints();
     const observer = new MutationObserver(getAnchorPoints);
-    observer.observe(document.getElementById("root"), {
+    observer.observe(document.getElementById('root'), {
       childList: true,
       subtree: true,
     });
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -61,7 +73,7 @@ const Menu = () => {
    * Programmatically determine where to set AnchorPoints for our Menu
    */
   const getAnchorPoints = () => {
-    const curScroll = window.scrollY - 120;
+    const curScroll = window.scrollY - 80;
     // const viewPortHeight = Math.max(
     //   document.documentElement.clientHeight,
     //   window.innerHeight || 0
@@ -69,15 +81,14 @@ const Menu = () => {
 
     for (const key in menuItems) {
       try {
-        menuItems[key] =
-          document.getElementById(key).getBoundingClientRect().top + curScroll;
+        menuItems[key] = document.getElementById(key).getBoundingClientRect().top + curScroll;
       } catch (error) {
         console.log(error);
       }
     }
-    // console.log(menuItems);
+    console.log(menuItems);
     const bottom = document.body.offsetHeight;
-    // console.log(bottom);
+    console.log(bottom);
     handleScroll();
   };
 
@@ -122,8 +133,8 @@ const Menu = () => {
       if (menuItems[section] < curPos) {
         // curSection = section;
         setActiveItem(section);
-        // console.log(menuItems);
-        // console.log(curPos);
+        console.log(menuItems);
+        console.log(curPos);
         // break;
       } else if (menuItems[section] >= curPos) {
         break;
@@ -141,7 +152,9 @@ const Menu = () => {
       itemName={menuItemNames[e]}
       anchorId={e}
       key={`menuitem_${i}`}
-      active={e === activeItem ? true : false}
+      active={e === activeItem}
+      id="menu-item"
+      sx={{ background: 'transparent' }}
     />
   ));
 
@@ -150,9 +163,11 @@ const Menu = () => {
    */
   return (
     <section>
-      <ul>{menuList}</ul>
+      <ul style={{ listStyle: 'none' }} className="menu-list">
+        {menuList}
+      </ul>
     </section>
   );
-};
+}
 
 export default Menu;

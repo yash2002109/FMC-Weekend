@@ -5,6 +5,7 @@ function Loading() {
   return (
     <div className="loading_div">
       <CircularProgress color='inherit'/>
+
     </div>
   );
 }

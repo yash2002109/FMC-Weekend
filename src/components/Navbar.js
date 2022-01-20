@@ -5,6 +5,8 @@ import './Navbar.css';
 import logo from './navlogo.png';
 import AuthContext  from '../store/auth-context';
 
+
+
 function Navbar() {
   const authCtx = useContext(AuthContext);
 
@@ -73,11 +75,11 @@ function Navbar() {
                 FAQ
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/glimpses" className="nav-links" onClick={closeMobileMenu}>
                 GLIMPSES
               </Link>
-            </li>
+            </li> */}
           </ul>
           {button && !(sessionStorage.getItem('tokenID')) && (
             <Button isInternalLink={true} toLink="/authentication" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>

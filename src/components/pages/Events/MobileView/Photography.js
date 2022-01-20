@@ -6,7 +6,6 @@ function Photography() {
 
   return (
     <section className="section">
-      <CartModal />
       <a href="/events" className="back-btn">Back</a>
       <div className="card-container">
         <div className="event-cards">

@@ -19,7 +19,7 @@ body {
   margin-right: 50px;
   margin-top: 40px;
   width: 70vw;
-  height: 450px;
+  height: 480px;
   transition-duration: 300ms;
   transition-property: transform;
   transition-timing-function: ease-out;
@@ -70,7 +70,12 @@ text-align: center;
  justify-content: space-between;
  width: 80vw;
 }
-
+.all-events {
+  display: flex;
+  width: 60vw;
+  padding-left: 20px;
+  margin: 0 auto;
+}
 .card-action {
   /* width: 100%; */
   perspective: 500px;
@@ -103,6 +108,10 @@ width: 80vw;
   top: 20px;
   position: relative;
   text-transform: uppercase;
+  text-decoration: none;
+}
+.btn1:hover {
+  color: #fff
 }
 .card-content {
   padding: 10px 20px;
@@ -126,7 +135,8 @@ width: 80vw;
 #vertical-tab-2,
 #vertical-tab-3,
 #vertical-tab-4,
-#vertical-tab-5 {
+#vertical-tab-5,
+#vertical-tab-6 {
   font-family: Marcellus;
 font-size: 0.4em;
 font-style: normal;
@@ -159,7 +169,7 @@ text-transform: capitalize;
   margin: auto;
   text-align: center;
   margin-top: 30px;
-  padding: 10px;
+  padding: 5px;
   background: transparent;
   border: 1px solid #FCC907;
   color: #FCC907;
@@ -184,9 +194,11 @@ text-transform: capitalize;
   font-size: 1.6em;
   color: #FCC907;
   background: transparent;
-  border: 1px solid #FCC907;
   padding: 3px;
-  margin-top: -100px;
+  outline: none;
+  position: absolute;
+  border: none;
+  bottom: 80%;
   margin: auto;
 }
 .cart:hover {
@@ -194,7 +206,41 @@ text-transform: capitalize;
   color:#27094B;
   transition: all 0.6s ease-in-out;
 }
-
+#modal-modal-title {
+  color: #fff;
+}
+#modal-modal-description {
+  color:#FCC907;
+}
+.table {
+  background: #27094B;
+  color: #fff
+}
+.btn-danger {
+  background: #fff;
+  color:#1D033E;
+  margin-right: 30px;
+}
+.btn-danger:hover {
+  background: transparent;
+  color:#fff;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary {
+  background:#FCC907;
+  color:#1D033E;
+  margin-right: -30px;
+}
+.btn-primary:hover {
+  background: transparent;
+  color:#fff;
+  border: 1px solid #FCC907;
+  transition: all 0.6s ease-in-out;
+}
+.btns {
+  padding: 10px;
+}
 @media screen and (max-width: 786px) {
   .event-cards {
     flex-wrap: wrap;
@@ -235,6 +281,9 @@ text-transform: capitalize;
     list-style: none;
     background: #1D033E;
    }
+   .btn-danger {
+    margin-bottom: 30px;
+  }
    .mobile h2{
      font-family: Marcellus;
      font-style: normal;
@@ -274,6 +323,9 @@ text-transform: capitalize;
     padding: 20px;
     position: relative;
   }
+  .section CartModal{
+    margin-top: -30px;
+  }
    .section .back-btn {
     font-family: Nunito Sans;
     font-size: 14px;
@@ -291,6 +343,7 @@ text-transform: capitalize;
     color: #FCC907;
     padding: 10px;
     background: transparent;
+    text-decoration: none;
     border-radius: 6px;
     position: absolute;
     cursor: pointer;
