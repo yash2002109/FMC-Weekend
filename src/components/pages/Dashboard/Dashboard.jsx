@@ -21,33 +21,53 @@ function Dashboard() {
       setIsLoading(true);
       const token = sessionStorage.getItem('tokenID');
       try {
-        const res = await fetch('/api/verify-token', {
-          method: 'POST',
-          body: JSON.stringify({
-            token: token
-          }),
+        const res = await fetch('/api/user', {
+          method: 'GET',
+          // body: JSON.stringify({
+          //   token: token
+          // }),
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            token: token
           }
         });
         const data = await res.json();
+        // console.log(data);
 
         // data has message : 'success' if valid and 'invalid' else
         // on valid, data also has user.email, user.name, user.isNewUser, user.role
         if (data.message === 'success') {
           console.log(data);
-          setUserData((prevState) => ({
-            // ...prevState,
-            name: data.user.name,
-            email: data.user.email,
-            college: data.user.college,
-            phone: data.user.number,
-            year: data.user.yearOfStudy,
-            instaHandle: data.user.instaHandle,
-            userType: data.user.role
-          }));
+          if (data.user.userID) {
+            setUserData((prevState) => ({
+              // ...prevState,
+              name: data.user.userID.name,
+              email: data.user.userID.email,
+              college: data.user.userID.college,
+              phone: data.user.userID.number,
+              year: data.user.userID.yearOfStudy,
+              instaHandle: data.user.userID.instaHandle,
+              userType: data.user.userID.role,
+              refCode: data.user.ref_code,
+              timesReferred: data.user.norefcode
+            }));
+          } else {
+            setUserData((prevState) => ({
+              // ...prevState,
+              name: data.user.name,
+              email: data.user.email,
+              college: data.user.college,
+              phone: data.user.number,
+              year: data.user.yearOfStudy,
+              instaHandle: data.user.instaHandle,
+              userType: data.user.role,
+              // refCode: data.user.ref_code
+              // timesReferred:
+            }));
+          }
         }
-      } catch {
+      } catch (e) {
+        console.log(e);
         alert('Error with authentication, login again');
       }
 
@@ -70,11 +90,11 @@ function Dashboard() {
               {userData.userType == 0 && (
                 <Fragment>
                   <h1>
-                    <a href="#">Events</a>
+                    <a href="events">Events</a>
                   </h1>
                   <br />
                   <h1>
-                    <a href="#">Merchandise</a>
+                    <a href="merchandise">Merchandise</a>
                   </h1>
                 </Fragment>
               )}
@@ -142,6 +162,20 @@ function Dashboard() {
                       <td>:</td>
                       <td>{userData.userType == 2 ? 'Campus Ambassador' : 'Participant'}</td>
                     </tr>
+                    {userData.refCode && <tr>
+                      <td>
+                        <strong>Referral Code</strong>
+                      </td>
+                      <td>:</td>
+                      <td>{userData.refCode}</td>
+                    </tr>}
+                    {userData.refCode && <tr>
+                      <td>
+                        <strong>People Referred</strong>
+                      </td>
+                      <td>:</td>
+                      <td>{userData.timesReferred}</td>
+                    </tr>}
                   </tbody>
                 </table>
               </div>
