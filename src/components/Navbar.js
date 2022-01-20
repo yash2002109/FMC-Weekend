@@ -81,12 +81,12 @@ function Navbar() {
               </Link>
             </li> */}
           </ul>
-          {button && !(sessionStorage.getItem('tokenID')) && (
+          {button && !(sessionStorage.getItem('isLoggedIn')=='true') && (
             <Button isInternalLink={true} toLink="/authentication" buttonStyle='btn--primary' className="nav-links sign" onClick={closeMobileMenu}>
               SIGN IN
             </Button>
           )}    
-          {button && (sessionStorage.getItem('tokenID')) && (
+          {button && (sessionStorage.getItem('isLoggedIn')=='true') && (
             <Button isInternalLink={true} toLink="/" buttonStyle='btn--primary' className="nav-links sign" onClick={logoutHandler}>
               SIGN OUT
             </Button>
