@@ -11,15 +11,16 @@
 }
 .position {
   margin-top: 10px;
+  font-size: 1.2em;
 }
 .team-card {
   /* width: 33vw; */
   width: calc(100px +10vw);
-  max-width: 300px;
+  max-width: 250px;
   /* mix-blend-mode: multiply; merges image with the page background */
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 380px;
+  height: 300px;
   transition: 0.3s;
   border-radius: 5px;
   /* flex: 1 0 500px; */
@@ -40,6 +41,7 @@
 }
 .team-card h3 {
   font-family: Marcellus;
+  font-size: 1.2em;
 }
 /* Add rounded corners to the top left and the top right corner of the image */
 /* Add some padding inside the card container */
@@ -48,38 +50,16 @@
   text-align: center;
   background: white;
 }
-
-.separator{
-  display:flex;
-  align-items: center;
-}
-
-.separator .line{
-  height: 1px;
-  flex: 1;
-  margin: 15px;
-  background-color: #FCC907;
-}
-
-.separator h2{
-  font-family: Marcellus;
-  font-size: 1.2em;
-  font-style: normal;
-  font-weight: 400;
-  color: #FCC907;
-  line-height: 20px;
-  letter-spacing: 0em;
-  margin-top: 20px;
-}
-.card-img {
+.cardImg {
   object-fit: cover;
   position: relative;
-  height: 290px;
+  height: 220px;
   width: 100%;
   overflow: hidden;
   transition: all .5s ease;
 }
-.card-img img:hover {
+.cardImg img {}
+.cardImg img:hover {
   transform: scale(1.08);
   opacity: 0.8;
 }

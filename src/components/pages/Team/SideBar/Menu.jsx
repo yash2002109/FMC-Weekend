@@ -22,21 +22,23 @@ const menuItems = {
   sponsor_7: null,
   sponsor_8: null,
   sponsor_9: null,
-  sponsor_10: null
+  sponsor_10: null,
+  sponsor_11: null,
 };
 
 const menuItemNames = {
   // sponsors: "Sponsors",
-  sponsor_1: 'Marketing',
-  sponsor_2: 'Publicity',
-  sponsor_3: 'Public Relations',
-  sponsor_4: 'Social Media',
-  sponsor_5: 'Tech',
-  sponsor_6: 'Design',
-  sponsor_7: 'Event',
-  sponsor_8: 'Convenors',
-  sponsor_9: 'General Secretary',
-  sponsor_10: 'Secretaries'
+  sponsor_1: 'Convenors',
+  sponsor_2: 'General Secretary',
+  sponsor_3: 'Content Team',
+  sponsor_4: 'Design',
+  sponsor_5: 'Event',
+  sponsor_6: 'Marketing',
+  sponsor_7: 'Publicity',
+  sponsor_8: 'Public Relations',
+  sponsor_9: 'Social Media',
+  sponsor_10: 'Tech',
+  sponsor_11: 'Secretaries',
 };
 
 /*

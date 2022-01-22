@@ -19,7 +19,7 @@ body {
   margin-right: 50px;
   margin-top: 40px;
   width: 70vw;
-  height: 480px;
+  height: 450px;
   transition-duration: 300ms;
   transition-property: transform;
   transition-timing-function: ease-out;
@@ -49,7 +49,7 @@ text-align: center;
 
 .separator h2{
   font-family: Marcellus;
-  font-size: 16px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
   color: #FCC907;
@@ -58,7 +58,7 @@ text-align: center;
   margin-top: 20px;
 }
 .card-img {
-  object-fit:cover;
+  object-fit: cover;
   position: relative;
   height: 250px;
   width: 100%;
@@ -149,7 +149,16 @@ position: relative;
 color: #F9F4F5;
 text-transform: capitalize;
 }
-
+#vertical-tab-0:focus,
+#vertical-tab-1:focus,
+#vertical-tab-2:focus,
+#vertical-tab-3:focus,
+#vertical-tab-4:focus,
+#vertical-tab-5:focus,
+#vertical-tab-6:active {
+  color: #FCC907;
+  border-right: none;
+}
 .sidebar {
   display: block;
 }
@@ -335,10 +344,10 @@ text-transform: capitalize;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
-    z-index: 999;
+    z-index: 1;
     width: 100px;
     height: 40px; 
-    left: 30%; 
+    left: 38%; 
     border: 2px solid #FCC907;
     color: #FCC907;
     padding: 10px;
