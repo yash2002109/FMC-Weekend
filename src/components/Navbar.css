@@ -111,7 +111,6 @@
     opacity: 1;
     transition: all 0.5s ease;
   }
-
   .nav-menu.active {
     background: #27094B;
     left: 0;
@@ -131,6 +130,7 @@
     width: 100%;
     display: table;
   }
+
   .sign{
     padding:40px
   }
@@ -160,6 +160,7 @@
   .fa-times {
     color: rgb(255, 255, 255);
     font-size: 2rem;
+
   }
   .img{
     margin-right:75vw;
