@@ -8,5 +8,5 @@
 .image {
     width: 100vw;
     max-height: 80vh;
-
+    object-fit: cover;
 }
