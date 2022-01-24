@@ -20,7 +20,7 @@ function Merchandise() {
             <ul>
           <li>
             Products are returnable within the applicable return window if you’ve received them in a
-            condition that is physically damaged.
+            condition that is physically damaged.</li>
             <li>
                           For damaged/ defective items, a replacement will be issued which will be delivered in a
                           number of days. The return request has to be placed on the website.
