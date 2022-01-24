@@ -173,14 +173,14 @@ const data = {
       price: 129
     }
   ],
-  allEvents: [
+  allEventsData: [
     {
       id: 20,
       img: '',
       type: 'Contest',
       title: 'All Events',
       link: '',
-      price: 129
+      price: 649
     },
     {
       id: 21,

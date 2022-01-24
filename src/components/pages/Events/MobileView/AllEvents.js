@@ -1,7 +1,8 @@
 import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
-function AllEVents() {
+
+function AllEvents() {
   return (
     <section className="section">
       <a href="/events" className="back-btn">
@@ -9,7 +10,7 @@ function AllEVents() {
       </a>
       <div className="card-container">
         <div className="event-cards">
-          {data.animationData.map((item, index) => {
+          {data.allEventsData.map((item, index) => {
             return (
               <EventCard
                 img={item.img}
@@ -22,12 +23,6 @@ function AllEVents() {
               />
             );
           })}
-        </div>
-
-        <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
         </div>
       </div>
     </section>

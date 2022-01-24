@@ -190,7 +190,7 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={6}>
         <div className="card-container">
           <div className="all-events">
-            {data.allEvents.map((item, index) => {
+            {data.allEventsData.map((item, index) => {
               return (
                 <EventCard
                   img={item.img}

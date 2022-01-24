@@ -22,6 +22,7 @@ import AuthContext from './store/auth-context';
 import PrivateRoute from './components/PrivateRoute';
 import Team from './components/pages/Team/Teams';
 import Merchandise from './components/pages/Merchandise/Merchandise';
+import AllEvents from './components/pages/Events/MobileView/AllEvents';
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -40,7 +41,7 @@ function App() {
           <Route path="/events/media" component={Media} />;
           <Route path="/events/design" component={Design} />;
           <Route path="/events/animation" component={Animation} />;
-          <Route path="/events/allevents" component={Animation} />;
+          <Route path="/events/allevents" component={AllEvents} />;
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/FAQ" component={FAQ} />
           <Route path="/" exact component={landingPage} />
