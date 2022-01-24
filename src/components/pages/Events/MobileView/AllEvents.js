@@ -1,7 +1,8 @@
 import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
-function Media() {
+
+function AllEvents() {
   return (
     <section className="section">
       <a href="/events" className="back-btn">
@@ -9,7 +10,7 @@ function Media() {
       </a>
       <div className="card-container">
         <div className="event-cards">
-          {data.mediaData.map((item, index) => {
+          {data.allEventsData.map((item, index) => {
             return (
               <EventCard
                 img={item.img}
@@ -28,4 +29,4 @@ function Media() {
   );
 }
 
-export default Media;
+export default AllEvents;
