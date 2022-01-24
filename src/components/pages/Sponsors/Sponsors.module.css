@@ -12,8 +12,6 @@
   line-height: 1.5;
   font-size: 1em;
   border-right: 2px solid #FCC907;
-  /* padding-top: ; */
-  z-index: -1;
   scrollbar-color: #FCC907;
 }
 .sidebar h1 {
@@ -21,11 +19,12 @@
   font-family: Nunito Sans;
 }
 .sidebar a {
-  padding: 15px;
+  padding: 35px;
   text-decoration: none;
   color: #fff;
   display: block;
   list-style: none;
+  height: 50%;
 }
 
 .sidebar a:hover {

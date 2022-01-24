@@ -15,16 +15,14 @@ const menuItems = {
   // sponsors: 0,
   sponsor_1: 0,
   sponsor_2: null,
-  sponsor_3: null,
-  sponsor_4: null
+  sponsor_3: null
 };
 
 const menuItemNames = {
   // sponsors: "Sponsors",
-  sponsor_1: 'Title Sponsor',
-  sponsor_2: 'Powered By',
-  sponsor_3: 'Sponsor 3',
-  sponsor_4: 'Sponsor 4'
+  sponsor_1: 'Powered By',
+  sponsor_2: 'Crypto trading partner',
+  sponsor_3: 'Book Reading partner'
 };
 
 /*
