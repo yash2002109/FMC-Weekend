@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 /*
  * We will include our MenuItem Component
  */
-import MenuItem from "./MenuItem";
+import MenuItem from './MenuItem';
 
 /*
  * The list of our Menu Titles (Sections) as keys, with their
@@ -16,15 +16,15 @@ const menuItems = {
   sponsor_1: 0,
   sponsor_2: null,
   sponsor_3: null,
-  sponsor_4: null,
+  sponsor_4: null
 };
 
 const menuItemNames = {
   // sponsors: "Sponsors",
-  sponsor_1: "Sponsor 1",
-  sponsor_2: "Sponsor 2",
-  sponsor_3: "Sponsor 3",
-  sponsor_4: "Sponsor 4",
+  sponsor_1: 'Title Sponsor',
+  sponsor_2: 'Powered By',
+  sponsor_3: 'Sponsor 3',
+  sponsor_4: 'Sponsor 4'
 };
 
 /*
@@ -35,7 +35,7 @@ const Menu = () => {
    * Store the active menuItem in state to force update
    * when changed
    */
-  const [activeItem, setActiveItem] = useState("sponsor_1");
+  const [activeItem, setActiveItem] = useState('sponsor_1');
   /*
    * The MutationObserver allows us to watch for a few different
    * events, including page resizing when new elements might be
@@ -47,13 +47,13 @@ const Menu = () => {
   useEffect(() => {
     getAnchorPoints();
     const observer = new MutationObserver(getAnchorPoints);
-    observer.observe(document.getElementById("root"), {
+    observer.observe(document.getElementById('root'), {
       childList: true,
-      subtree: true,
+      subtree: true
     });
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -69,8 +69,7 @@ const Menu = () => {
 
     for (const key in menuItems) {
       try {
-        menuItems[key] =
-          document.getElementById(key).getBoundingClientRect().top + curScroll;
+        menuItems[key] = document.getElementById(key).getBoundingClientRect().top + curScroll;
       } catch (error) {
         console.log(error);
       }

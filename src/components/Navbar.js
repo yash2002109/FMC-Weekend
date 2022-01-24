@@ -84,8 +84,7 @@ function Navbar() {
             toLink="/authentication"
             buttonStyle="btn--primary"
             className="nav-links sign"
-            onClick={closeMobileMenu}
-          >
+            onClick={closeMobileMenu}>
             SIGN IN
           </Button>
         )}
@@ -95,8 +94,7 @@ function Navbar() {
             toLink="/"
             buttonStyle="btn--primary"
             className="nav-links sign"
-            onClick={logoutHandler}
-          >
+            onClick={logoutHandler}>
             SIGN OUT
           </Button>
         )}

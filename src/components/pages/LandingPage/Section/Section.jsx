@@ -29,7 +29,7 @@ function Section(props) {
           {/* <h2>Column 2</h2>
           <p>Some text..</p> */}
 
-          <img src="/clubs_2X.png" className={Classes.section_image} />
+          <img src={props.imagePath} className={Classes.section_image} />
         </div>
       </div>
     </div>

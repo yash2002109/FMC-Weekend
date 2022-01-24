@@ -125,7 +125,7 @@
     flex-wrap: wrap;
   }
   .footer {
-    margin: auto;
+    /* margin: auto; */
   }
   .footer section3 {
     display: flex;

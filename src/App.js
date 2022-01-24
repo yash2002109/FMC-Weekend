@@ -40,6 +40,7 @@ function App() {
           <Route path="/events/media" component={Media} />;
           <Route path="/events/design" component={Design} />;
           <Route path="/events/animation" component={Animation} />;
+          <Route path="/events/allevents" component={Animation} />;
           <Route path="/sponsors" component={Sponsors} />
           <Route path="/FAQ" component={FAQ} />
           <Route path="/" exact component={landingPage} />
