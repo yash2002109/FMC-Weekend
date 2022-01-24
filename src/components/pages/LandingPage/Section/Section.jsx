@@ -1,12 +1,13 @@
 import Classes from './Section.module.css';
 import Button from './Button/Button';
+
 function Section(props) {
   return (
     <div className={Classes.section}>
       {/* <h2 >Title</h2> */}
-    {/* <div > */}
+      {/* <div > */}
       <h2 className={Classes.section_title}>{props.title}</h2>
-    {/* </div> */}
+      {/* </div> */}
 
       <div className={Classes.row}>
         <div className={Classes.column_1}>
@@ -28,7 +29,7 @@ function Section(props) {
           {/* <h2>Column 2</h2>
           <p>Some text..</p> */}
 
-          <img className={Classes.section_image} src={props.imagePath}></img>
+          <img src="/clubs_2X.png" className={Classes.section_image} />
         </div>
       </div>
     </div>

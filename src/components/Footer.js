@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import { Button } from './Button';
 import logo from './fmcfooter1.png';
 import temp from './logo.png';
 
@@ -11,13 +11,14 @@ function Footer() {
       <footer>
         <div className="sub-footer">
           <p>
-            CONTACT <span class="tab"></span> CONTACT
+            <h6>Luv Bansal: </h6>
+            <span className="phone1">9024552872</span>
+            <h5>Manhar Joshi: </h5>
+            <span className="phone2">7015461454</span>
           </p>
         </div>
         <div className="footer">
-          <section1>
-            <img src={temp} className="powered" alt="logo" />
-          </section1>
+          <section1 />
           <section5>
             <h3>PRESENTS</h3>
           </section5>
@@ -26,47 +27,51 @@ function Footer() {
           </section>
           <section2>
             <h2>POWERED BY</h2>
-            <br></br>
-            <br></br>
-            <br></br>
+            <br />
+            <br />
+            <br />
             <h3>CO-POWERED BY</h3>
           </section2>
         </div>
       </footer>
 
-      <section class="social-media">
-        <div class="social-icons">
+      <section className="social-media">
+        <div className="social-icons">
           <a
-            class="social-icon-link facebook"
+            className="social-icon-link facebook"
             href="https://www.facebook.com/fmcweekendiitbhu"
             target="_blank"
             aria-label="Facebook"
-            rel="noreferrer">
-            <i class="fab fa-facebook" />
+            rel="noreferrer"
+          >
+            <i className="fab fa-facebook" />
           </a>
           <a
-            class="social-icon-link instagram"
+            className="social-icon-link instagram"
             href="https://www.instagram.com/fmc_weekend/"
             target="_blank"
             aria-label="Instagram"
-            rel="noreferrer">
-            <i class="fab fa-instagram" />
+            rel="noreferrer"
+          >
+            <i className="fab fa-instagram" />
           </a>
           <a
-            class="social-icon-link youtube"
+            className="social-icon-link youtube"
             href="https://www.youtube.com/channel/UCt4-7kmQaPEZzPLil4RNRCw"
             target="_blank"
             aria-label="Youtube"
-            rel="noreferrer">
-            <i class="fab fa-youtube" />
+            rel="noreferrer"
+          >
+            <i className="fab fa-youtube" />
           </a>
           <a
-            class="social-icon-link linkedin"
+            className="social-icon-link linkedin"
             href="https://in.linkedin.com/company/fmc-weekend-creative"
             target="_blank"
             aria-label="LinkedIn"
-            rel="noreferrer">
-            <i class="fab fa-linkedin" />
+            rel="noreferrer"
+          >
+            <i className="fab fa-linkedin" />
           </a>
         </div>
       </section>

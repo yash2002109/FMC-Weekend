@@ -7,7 +7,9 @@ import Section from './Section/Section';
 import Classes from './LandingPage.module.css';
 import Footer from '../../Footer';
 import { Button } from '../../Button';
-import closeMobileMenu from '../../../components/Navbar';
+
+import closeMobileMenu from '../../Navbar';
+
 
 function landingPage() {
   const [button, setButton] = useState(true);
@@ -23,12 +25,12 @@ function landingPage() {
   useEffect(() => {
     showButton();
   }, []);
-  
+
   const logoutHandler = () => {
     sessionStorage.clear();
-    window.location.href ="/";
+    window.location.href = '/';
     closeMobileMenu();
-  }
+  };
 
   return (
     <div className={Classes.landing_page}>
@@ -37,46 +39,43 @@ function landingPage() {
         {/* <Button /> */}
         {button && !sessionStorage.getItem('tokenID') && (
           <Button
-            isInternalLink={true}
+            isInternalLink
             toLink="/authentication"
             buttonStyle="btn--primary"
             className="nav-links sign"
           >
             SIGN IN
           </Button>
-        )}        
+        )}
         {button && sessionStorage.getItem('tokenID') && (
           <Button
-            isInternalLink={true}
+            isInternalLink
             toLink="/"
             buttonStyle="btn--primary"
             className="nav-links sign"
-            onClick={logoutHandler}>
+            onClick={logoutHandler}
+          >
             SIGN OUT
           </Button>
         )}
       </div>
-      
-      <Banner imagePath={Image} />
-      <Section title="ABOUT US" imagePath={sectionImage} buttonText="KNOW MORE">
-        After weeks of speculation, uncertainty and postponement, the FMC Weekend is back with a
-        bang. After 6 hugely successful editions, this year's edition is going to be just as
-        majestic as ever. What's even better this time around is the fact that you can have the same
-        surreal experience in its entirety from the comfort of your own homes. Participate in
-        various events to put your mettle to test, attend various workshops conducted by masters of
-        their respective craft to refine your skills, all without getting out of your PJs.
+
+      <Banner imagePath="/Rectangle_29.png" />
+      <Section title="ABOUT US" imagePath="/clubs_2X.png" buttonText="REGISTER">
+        The long-awaited exemplary 8th edition of FMC Weekend is finally here! This time we not only
+        bring to you a plethora of exciting events that will put your creative mettle to test, but
+        also some awe-inspiring workshops by the notable and established names of the digital arts
+        domain, all from the very comfort of your home. As we herald this journey, get ready to
+        experience some of the most ecstatic moments of your lives as the passion for digital arts
+        conjures within you.
       </Section>
 
-      <Section title="EVENTS" imagePath={sectionImage} buttonText="KNOW MORE">
-        After weeks of speculation, uncertainty and postponement, the FMC Weekend is back with a
-        bang. After 6 hugely successful editions, this year's edition is going to be just as
-        majestic as ever. What's even better this time around is the fact that you can have the same
-        surreal experience in its entirety from the comfort of your own homes. Participate in
-        various events to put your mettle to test, attend various workshops conducted by masters of
-        their respective craft to refine your skills, all without getting out of your PJs.
+      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="KNOW MORE">
+        The electrifying eighth edition of FMC Weekend brings to you an opportunity to compete with
+        your contemporaries and establish your talent. Participate in events of creative writing,
+        photography, cinematography, design and animation, discover your true potential and watch
+        FMC Weekend truly transform into a celebration of excellence.
       </Section>
-
-      <Banner imagePath={Image} />
       <Footer />
     </div>
   );
