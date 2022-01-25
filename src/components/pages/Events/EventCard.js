@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 // import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
@@ -52,6 +53,6 @@ EventCard.defaultProps = {
   type: 'Contest',
   title: 'That’s How B’roll',
   ps: 'Problem Statement',
-  price: 150,
+  price: 150
 };
 export default EventCard;

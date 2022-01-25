@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from 'react';
 import Banner from './Banner/Banner';
 import Image from './merchandise.png';
@@ -42,8 +41,7 @@ function landingPage() {
             isInternalLink
             toLink="/authentication"
             buttonStyle="btn--primary"
-            className="nav-links sign"
-          >
+            className="nav-links sign">
             SIGN IN
           </Button>
         )}
@@ -53,8 +51,7 @@ function landingPage() {
             toLink="/"
             buttonStyle="btn--primary"
             className="nav-links sign"
-            onClick={logoutHandler}
-          >
+            onClick={logoutHandler}>
             SIGN OUT
           </Button>
         )}
