@@ -7,8 +7,8 @@ import CartModal from './CartModal';
 function Events() {
   return (
     <div>
-      <CartModal />
       <div className="sidebar">
+        <CartModal />
         <SideBar />
         <Footer />
       </div>

@@ -9,13 +9,12 @@ const CardTitle = styled.h3`
 
 function SponsorCard(props) {
   return (
-    <div className="sponsor-card">
-      <div>
-        <div className="cardImg">
-          <a href="#">
-            <img src={props.img} alt="unicorn" className="cardImg" />
-          </a>
-        </div>
+    <div>
+      <div className="sponsorImg">
+        <a href={props.site} target="_blank" rel="noreferrer">
+          <img src={props.img} alt="unicorn" />
+        </a>
+
         <h2>{props.name}</h2>
         <h6>{props.sponsor}</h6>
       </div>

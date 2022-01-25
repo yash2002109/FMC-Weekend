@@ -209,12 +209,19 @@ text-transform: capitalize;
   position: absolute;
   border: none;
   bottom: 80%;
+  cursor: pointer;
+  z-index: 1;
   margin: auto;
 }
 .cart:hover {
   background: #FCC907;
   color:#27094B;
   transition: all 0.6s ease-in-out;
+}
+.cart-modal {
+  display: inline-block;
+  overflow-x: hidden;
+  margin: auto;
 }
 #modal-modal-title {
   color: #fff;
@@ -235,6 +242,7 @@ text-transform: capitalize;
   background: #fff;
   color:#1D033E;
   margin-right: 30px;
+  margin-top: 20px;
 }
 .btn-danger:hover {
   background: transparent;
@@ -246,6 +254,7 @@ text-transform: capitalize;
   background:#FCC907;
   color:#1D033E;
   margin-right: -30px;
+  margin-top: 20px;
 }
 .btn-primary:hover {
   background: transparent;

@@ -22,7 +22,9 @@ function Section(props) {
             {props.children}
           </p>
           <div className={Classes.section_button}>
-            <Button>{props.buttonText}</Button>
+            <a href={props.link}>
+              <Button>{props.buttonText}</Button>
+            </a>
           </div>
         </div>
         <div className={Classes.column_2}>

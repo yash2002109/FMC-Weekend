@@ -112,7 +112,10 @@
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 33px;
+  /* line-height: 33px; */
+}
+.section_button a {
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   .column_2 {

@@ -1,13 +1,14 @@
 import React from 'react';
 import './events.css';
 import CartModal from './CartModal';
+import { Link } from 'react-router-dom';
 
 function MobileLayout() {
   return (
     <div className="mobile">
       <h2>Events in</h2>
       <ul>
-        <a href="/events/photography">
+        <Link to="/events/photography">
           <li>
             Photography{' '}
             <span
@@ -15,8 +16,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/cinematography">
+        </Link>
+        <Link to="/events/cinematography">
           <li>
             Cinematography{' '}
             <span
@@ -24,8 +25,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/outreach">
+        </Link>
+        <Link to="/events/outreach">
           <li>
             Outreach{' '}
             <span
@@ -33,8 +34,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/design">
+        </Link>
+        <Link to="/events/design">
           <li>
             Design{' '}
             <span
@@ -42,8 +43,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/media">
+        </Link>
+        <Link to="/events/media">
           <li>
             Media{' '}
             <span
@@ -51,8 +52,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/animation">
+        </Link>
+        <Link to="/events/animation">
           <li>
             Animation{' '}
             <span
@@ -60,8 +61,8 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
-        <a href="/events/allevents">
+        </Link>
+        <Link to="/events/allevents">
           <li>
             All Events & Workshops{' '}
             <span
@@ -69,7 +70,7 @@ function MobileLayout() {
               data-icon="mdi-light:chevron-right"
               data-inline="false"></span>
           </li>
-        </a>
+        </Link>
       </ul>
     </div>
   );
