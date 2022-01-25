@@ -27,7 +27,7 @@ export default function Cart(props) {
     document.querySelector('.payment-modal').style.display = 'block';
     document.querySelector('.cart-modal').style.display = 'none';
   };
-  if (isEmpty) return <p>Your cart is empty</p>;
+
   return (
     <div>
       <button onClick={handleOpen} className="cart">
