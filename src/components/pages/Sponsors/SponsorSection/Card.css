@@ -1,6 +1,6 @@
 .parent_wrapper {
 
-  width: 100%;
+  width: 50%;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -8,24 +8,6 @@
   margin: auto;
 }
 
-.sponsor-card {
-  /* width: 33vw; */
-  width: calc(100px +10vw);
-  max-width: 350px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 350px;
-  transition: 0.3s;
-  /* flex: 1 0 500px; */
-  flex: 2 2 auto;
-  box-sizing: border-box;
-  /* margin: 1rem 0.25em; */
-  margin: 20px;
-  /* 5px rounded corners */
-  color:#FCC907;
-  font-family: Nunito Sans;
-  text-align: center;
-  overflow-x: hidden;
-}
 .sponsor-card:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: all 0.4s ease;
@@ -37,23 +19,25 @@
   text-align: center;
   background: white;
 }
-.cardImg {
-  object-fit:calc(10vw);
+.sponsorImg {
   position: relative;
-  height: 350px;
-  width: 350px;
-  overflow: hidden;
+  margin: 40px;
+  border-radius: 50%;
+}
+.sponsorImg h2 {
+  margin-top: 40px;
+}
+.sponsorImg img {
+  position: relative;
+  width: 250px;
+  height: auto;
   transition: all .5s ease;
 }
-.sponsor-card h6 {
+.sponsorImg h6 {
   color: #fff;
+  text-align: center;
   font-size: 1.2em;
   font-family: Marcellus;
-}
-.cardImg img {}
-.cardImg img:hover {
-  transform: scale(1.08);
-  opacity: 0.8;
 }
 @media screen and (max-width: 700px) {
   .team-card {

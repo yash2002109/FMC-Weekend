@@ -216,6 +216,11 @@ text-transform: capitalize;
   color:#27094B;
   transition: all 0.6s ease-in-out;
 }
+.cart-modal {
+  display: inline-block;
+  overflow-x: hidden;
+  margin: auto;
+}
 #modal-modal-title {
   color: #fff;
   font-family: Marcellus;

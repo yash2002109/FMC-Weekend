@@ -9,15 +9,21 @@ function SponsorSection(props) {
       {/* <h1>Sponsor 1</h1> */}
       <div className={classes.sponsor_title} id="sponsor_1">
         <div className={classes.cards}>
-          <Card img="/LAPCARE_LOGO.jpg" name="Lapcare" sponsor="Powered-by Sponsor" />
+          <Card
+            img="/LAPCARE_LOGO.png"
+            name="Lapcare"
+            sponsor="Powered-by Sponsor"
+            site="https://www.lapcare.com/"
+          />
         </div>
       </div>
       <div className={classes.sponsor_title} id="sponsor_2">
         <div className={classes.cards}>
           <Card
-            img="/GIOTTUS_LOGO.png"
+            img="/Giottus-logo.png"
             name="Giottus Technologies"
             sponsor="Crypto Trading Partner"
+            site="https://giottus.com/"
           />
         </div>
       </div>
@@ -25,9 +31,10 @@ function SponsorSection(props) {
       <div className={classes.sponsor_title} id="sponsor_3">
         <div className={classes.cards}>
           <Card
-            img="/Billionbooks-Official-Logo_(1).svg"
+            img="https://play-lh.googleusercontent.com/KBYiuGdXwAt6NnW2PPStPDhb-WoLpadCSq2qbYbgmURNBUONjEcbUCfQuWoOkF6KWg"
             name="Billionbooks"
             sponsor="Book Reading Partner"
+            site="https://thebillionbooks.store/"
           />
         </div>
       </div>
