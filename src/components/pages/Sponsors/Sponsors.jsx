@@ -13,12 +13,8 @@ function Sponsors() {
         </div>
 
         <div className={classes.main}>
-          <SponsorSection sponsorId="sponsor_1" />
-          <SponsorSection sponsorId="sponsor_2" />
-          <SponsorSection sponsorId="sponsor_3" />
-          <SponsorSection sponsorId="sponsor_4" />
+          <SponsorSection sponsorId="sponsor_1" href="#sponsor_1" />
         </div>
-        <Footer />
       </div>
     </>
   );
