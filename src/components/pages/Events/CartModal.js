@@ -73,9 +73,18 @@ export default function Cart(props) {
               </table>
             </div>
             <div className="col-auto ms-auto">
-              <h3>Total Price: {cartTotal}</h3>
+              <h3>
+                Total Price: <i className="fas fa-rupee-sign"></i> {cartTotal}
+              </h3>
             </div>
             <div className="col-auto ms-auto btns">
+              <span>
+                <h3 style={{ color: 'white' }}>Cart Cutoff Price:</h3>
+                <p>
+                  10% off on total bill in excess of 699 and access to all Events+Workshops
+                  (Pre-weekend+Post-weekend included)+Pronites
+                </p>
+              </span>
               <button className="btn btn-danger" onClick={() => emptyCart()}>
                 Clear Cart
               </button>
