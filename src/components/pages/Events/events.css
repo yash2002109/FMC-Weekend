@@ -209,6 +209,8 @@ text-transform: capitalize;
   position: absolute;
   border: none;
   bottom: 80%;
+  cursor: pointer;
+  z-index: 1;
   margin: auto;
 }
 .cart:hover {
