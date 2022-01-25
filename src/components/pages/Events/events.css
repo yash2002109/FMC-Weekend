@@ -242,6 +242,7 @@ text-transform: capitalize;
   background: #fff;
   color:#1D033E;
   margin-right: 30px;
+  margin-top: 20px;
 }
 .btn-danger:hover {
   background: transparent;
@@ -253,6 +254,7 @@ text-transform: capitalize;
   background:#FCC907;
   color:#1D033E;
   margin-right: -30px;
+  margin-top: 20px;
 }
 .btn-primary:hover {
   background: transparent;
