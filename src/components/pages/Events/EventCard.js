@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 // import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
@@ -18,7 +18,17 @@ const CardTitle = styled.h3`
 `;
 
 function EventCard(props) {
+  const [click, setClick] = useState(false);
+
   const { addItem } = useCart();
+  const { getItem } = useCart();
+  const handleClick = () => {
+    setClick(!click);
+    for (let item of items.length) {
+      document.getElementById(`#${props.item}`).innerText = 'Added';
+      document.getElementById(`#${props.item}`).disabled = true;
+    }
+  };
   const options = {
     reverse: true,
     max: 15,
@@ -27,7 +37,6 @@ function EventCard(props) {
     perspective: 1000,
     scale: 1.06
   };
-
   return (
     <Tilt className="event-card" options={options}>
       <div>
@@ -38,11 +47,20 @@ function EventCard(props) {
           <div className="line" />
         </div>
         <CardTitle className="card-title">{props.title}</CardTitle>
+        <h2 className="prizes">
+          Prize worth <span className="iconify" data-icon="ph:currency-inr"></span> {props.prize}
+        </h2>
         <a href={props.link} target="_blank" className="btn1" rel="noreferrer">
           {props.ps}
         </a>
       </div>
-      <button className="cart-btn" onClick={() => addItem(props.item)}>
+      <button
+        className="cart-btn"
+        id={`#${props.item}`}
+        onClick={() => {
+          addItem(props.item, 1);
+          handleClick();
+        }}>
         Add to Cart
         <i className="fas fa-arrow-right" />
       </button>
