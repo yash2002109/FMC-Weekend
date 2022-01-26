@@ -43,7 +43,7 @@ const Menu = () => {
    * on our user's scroll depth
    */
   useEffect(() => {
-    getAnchorPoints();
+    setTimeout(getAnchorPoints, 1000);
     const observer = new MutationObserver(getAnchorPoints);
     observer.observe(document.getElementById('root'), {
       childList: true,
@@ -72,9 +72,9 @@ const Menu = () => {
         console.log(error);
       }
     }
-    console.log(menuItems);
+    // console.log(menuItems);
     const bottom = document.body.offsetHeight;
-    console.log(bottom);
+    // console.log(bottom);
     handleScroll();
   };
 
@@ -119,8 +119,8 @@ const Menu = () => {
       if (menuItems[section] < curPos) {
         // curSection = section;
         setActiveItem(section);
-        console.log(menuItems);
-        console.log(curPos);
+        // console.log(menuItems);
+        // console.log(curPos);
         // break;
       } else if (menuItems[section] >= curPos) {
         break;

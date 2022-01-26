@@ -52,6 +52,7 @@ function App() {
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/team" exact component={Team} />
           <Route path="/merchandise" exact component={Merchandise} />
+
         </Switch>
       </Router>
     </>

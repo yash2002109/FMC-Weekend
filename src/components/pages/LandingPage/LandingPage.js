@@ -6,7 +6,9 @@ import Section from './Section/Section';
 import Classes from './LandingPage.module.css';
 import Footer from '../../Footer';
 import { Button } from '../../Button';
+
 import closeMobileMenu from '../../Navbar';
+
 
 function landingPage() {
   const [button, setButton] = useState(true);
