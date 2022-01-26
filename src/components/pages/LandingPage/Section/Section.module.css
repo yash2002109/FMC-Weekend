@@ -107,11 +107,12 @@
   display: flex;
   position: absolute;
   left: 0.5vw;
+  width: 250px;
   bottom: -5vh;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.3em;
   /* line-height: 33px; */
 }
 .section_button a {
