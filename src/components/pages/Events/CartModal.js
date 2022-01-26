@@ -22,12 +22,14 @@ export default function Cart(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart } = useCart();
+  const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, totalUniqueItems } =
+    useCart();
   const handlePayment = () => {
     document.querySelector('.payment-modal').style.display = 'block';
     document.querySelector('.cart-modal').style.display = 'none';
   };
-
+  if (cartTotal > 699) {
+  }
   return (
     <div>
       <button onClick={handleOpen} className="cart">
@@ -74,15 +76,17 @@ export default function Cart(props) {
             </div>
             <div className="col-auto ms-auto">
               <h3>
-                Total Price: <i className="fas fa-rupee-sign"></i> {cartTotal}
+                Total Price: <span className="iconify" data-icon="ph:currency-inr"></span>{' '}
+                {cartTotal}
               </h3>
             </div>
             <div className="col-auto ms-auto btns">
               <span>
                 <h3 style={{ color: 'white' }}>Cart Cutoff Price:</h3>
                 <p>
-                  10% off on total bill in excess of 699 and access to all Events+Workshops
-                  (Pre-weekend+Post-weekend included)+Pronites
+                  10% off on total bill in excess of{' '}
+                  <span className="iconify" data-icon="ph:currency-inr"></span> 699 and access to
+                  all Events+Workshops (Pre-weekend+Post-weekend included)+Pronites
                 </p>
               </span>
               <button className="btn btn-danger" onClick={() => emptyCart()}>

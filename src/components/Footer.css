@@ -60,8 +60,20 @@
 .footer section2 img {
   width: 250px;
   padding-left: 10px;
-  margin-left: 130px;
+  /* left: -120px; */
+  margin-top: 60px;
   position: absolute;
+}
+.footer section2 h3{
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: 1.3em;
+}
+.footer section2 h2{
+  /* margin-left: -340px; */
+  position: absolute;
+  font-size: 1.3em;
 }
 .footer section3 {
   padding: 0rem 2rem 1rem;
