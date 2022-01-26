@@ -19,7 +19,7 @@ body {
 .workshop-card {
   margin-right: 50px;
   margin-top: 40px;
-  width: 70vw;
+  width: 65vw;
   height: 450px;
   transition-duration: 300ms;
   transition-property: transform;
@@ -44,13 +44,13 @@ text-align: center;
 .separator .line{
   height: 1px;
   flex: 1;
-  margin: 15px;
+  margin: 10px;
   background-color: #FCC907;
 }
 
 .separator h2{
   font-family: Marcellus;
-  font-size: 36px;
+  font-size: 1.2em;
   font-style: normal;
   font-weight: 400;
   color: #FCC907;
@@ -61,7 +61,7 @@ text-align: center;
 .card-img {
   object-fit: cover;
   position: relative;
-  height: 250px;
+  height: 220px;
   width: 100%;
   background-color: #000;
 }
@@ -106,7 +106,6 @@ width: 80vw;
   color:#FCC907;
   margin: 0 auto;
   text-align: center;
-  top: 20px;
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
@@ -120,17 +119,22 @@ width: 80vw;
 }
 .card-title {
   margin: 0 auto;
-  font-size: 24px;
   color: #fff;
   font-family: Marcellus;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
+  margin-top: -10px;
   line-height: 30px;
   letter-spacing: 0em;
   text-align: center;
 }
-
+.event-card .prizes {
+  /* margin-top: -0.5px; */
+}
+.MuiSlider-root {
+  color: #FCC907;
+}
 #vertical-tab-0,
 #vertical-tab-1,
 #vertical-tab-2,
@@ -139,16 +143,17 @@ width: 80vw;
 #vertical-tab-5,
 #vertical-tab-6 {
   font-family: Marcellus;
-font-size: 0.4em;
-font-style: normal;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: 0em;
-padding: 20px;
-text-align: left;
-position: relative;
-color: #F9F4F5;
-text-transform: capitalize;
+  font-size: 0.4em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  padding: 20px;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  color: #F9F4F5;
+  text-transform: capitalize;
 }
 #vertical-tab-0:focus,
 #vertical-tab-1:focus,
@@ -160,6 +165,15 @@ text-transform: capitalize;
   color: #FCC907;
   border-right: none;
 }
+.MuiTabs-indicator {
+  width: 0px;
+  background: #fcc907;
+}
+.MuiButtonBase-root-MuiTab-root {
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
 .sidebar {
   display: block;
 }
@@ -178,7 +192,7 @@ text-transform: capitalize;
   position: relative;
   margin: auto;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 15px;
   padding: 5px;
   background: transparent;
   border: 1px solid #FCC907;
@@ -206,11 +220,11 @@ text-transform: capitalize;
   background: transparent;
   padding: 3px;
   outline: none;
-  position: absolute;
+  position: fixed;
   border: none;
   bottom: 80%;
   cursor: pointer;
-  z-index: 1;
+  z-index: 5;
   margin: auto;
 }
 .cart:hover {

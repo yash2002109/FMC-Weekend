@@ -1,31 +1,7 @@
 .sidebar {
-  height: 100%;
-  width: calc(250px + 10vw);
-  /* min-width: 200px; */
-  position: fixed;
-  top: 20;
-  left: 0;
-  background: transparent;
-  overflow-x: hidden;
-  padding-top: 20px;
-  text-align: left;
-  line-height: 1.5;
-  font-size: 1.2em;
-  font-family: Marcellus;
-  border-right: 2px solid #FCC907;
-  scrollbar-color: #FCC907;
-}
-.sidebar h1 {
-  font-size: 1.6em;
-  font-family: Marcellus;
+ display: none;
 }
 .sidebar a {
-  padding: 30px;
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  list-style: none;
-  height: 50%;
 }
 
 .sidebar a:hover {

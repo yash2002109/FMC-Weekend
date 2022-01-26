@@ -7,7 +7,8 @@ const data = {
       type: 'Contest',
       title: 'InFocus',
       link: 'https://drive.google.com/uc?id=1ypZkoyI1x3Es-zCTiT0jytmZTazSXmNp&export=download',
-      price: 129
+      price: 129,
+      prize: '8k'
     },
     {
       id: 2,
@@ -16,7 +17,8 @@ const data = {
       type: 'Contest',
       title: 'Snap It Now',
       link: 'https://drive.google.com/uc?id=1YyKAYn-PBXPoKSB1Z1iU6fa6wjaVGULL&export=download',
-      price: 129
+      price: 129,
+      prize: '8k'
     },
     {
       id: 3,
@@ -25,7 +27,8 @@ const data = {
       type: 'Contest',
       title: 'Photo Art',
       link: 'https://drive.google.com/uc?id=1nEwQqQeI5mulbMTA1I6u9YzXsLLLEiKC&export=download',
-      price: 129
+      price: 129,
+      prize: '8k'
     }
   ],
   outreachData: [
