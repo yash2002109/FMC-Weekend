@@ -1,35 +1,47 @@
 .sidebar {
   height: 100%;
-  width: calc(200px + 10vw);
+  width: calc(250px + 10vw);
   /* min-width: 200px; */
   position: fixed;
-  z-index: 1;
   top: 20;
   left: 0;
-  background-color: #111;
+  background: transparent;
   overflow-x: hidden;
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
-  /* padding-top: ; */
+  font-size: 1.2em;
+  font-family: Marcellus;
+  border-right: 2px solid #FCC907;
+  scrollbar-color: #FCC907;
 }
-
+.sidebar h1 {
+  font-size: 1.6em;
+  font-family: Marcellus;
+}
 .sidebar a {
-  padding: 6px 8px 6px 16px;
+  padding: 30px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  color: #fff;
   display: block;
+  list-style: none;
+  height: 50%;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: #FCC907;
 }
-
+.sidebar a:focus {
+  color: #FCC907;
+}
 .main {
   margin-left: calc(210px + 10vw); /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
+  font-size: 1.2em;
   padding: 0px 10px;
+  list-style: none;
+}
+#menu-item {
+  font-size: 1em;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar
@@ -54,7 +66,10 @@
     width: 100%;
     height: auto;
     position: relative;
-    /* position: fixed; */
+    list-style: none;
+    border-right: none;
+    border-bottom: 2px solid #FCC907;
+    display: none;
   }
 
   .sidebar a {

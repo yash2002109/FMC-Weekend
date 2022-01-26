@@ -1,5 +1,6 @@
 body {
-  background: #1D033E;  
+  background: #1D033E;
+  font-family: Marcellus;  
 }
 .tabs {
   color: #fff;
@@ -208,6 +209,8 @@ text-transform: capitalize;
   position: absolute;
   border: none;
   bottom: 80%;
+  cursor: pointer;
+  z-index: 1;
   margin: auto;
 }
 .cart:hover {
@@ -215,11 +218,21 @@ text-transform: capitalize;
   color:#27094B;
   transition: all 0.6s ease-in-out;
 }
+.cart-modal {
+  display: inline-block;
+  overflow-x: hidden;
+  margin: auto;
+}
 #modal-modal-title {
   color: #fff;
+  font-family: Marcellus;
+  border-bottom: 2px solid #FCC907;
+  padding-bottom: 20px;
 }
 #modal-modal-description {
   color:#FCC907;
+  font-family: Marcellus;
+  border-bottom: 2px solid #FCC907;
 }
 .table {
   background: #27094B;
@@ -229,6 +242,7 @@ text-transform: capitalize;
   background: #fff;
   color:#1D033E;
   margin-right: 30px;
+  margin-top: 20px;
 }
 .btn-danger:hover {
   background: transparent;
@@ -240,6 +254,7 @@ text-transform: capitalize;
   background:#FCC907;
   color:#1D033E;
   margin-right: -30px;
+  margin-top: 20px;
 }
 .btn-primary:hover {
   background: transparent;
@@ -250,6 +265,38 @@ text-transform: capitalize;
 .btns {
   padding: 10px;
 }
+.payment-modal {
+  display: none;
+  font-family: Marcellus;
+  border: 2px solid #FCC907;
+}
+#modal-modal-description ul li {
+  display: flex;
+  padding: 20px;
+}
+#modal-modal-description ul li span {
+  color: #fff;
+  font-family: Marcellus;
+  font-size: 1.4em;
+}
+#modal-modal-description  h3 {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  margin-top: 3px;
+  padding-left: 20px;
+}
+#modal-modal-description p {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  padding-left: 20px;
+}
+#modal-modal-description a {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  text-decoration: none;
+  padding: 20px;
+  color: #fff;
+} 
 @media screen and (max-width: 786px) {
   .event-cards {
     flex-wrap: wrap;
@@ -364,4 +411,30 @@ text-transform: capitalize;
    .trash-btn {
      display: none;
    }
+   #modal-modal-description ul li {
+    display: flex;
+    padding: 0px;
+  }
+  #modal-modal-description ul li span {
+    color: #fff;
+    font-family: Marcellus;
+    padding-right: 5px;
+    font-size: 0.8em;
+  }
+  #modal-modal-description  h3 {
+    font-family: Marcellus;
+    font-size: 0.9em;
+    padding-left: 4px;
+    margin-top: 3px;
+  }
+  #modal-modal-description p {
+    font-family: Marcellus;
+    font-size: 0.8em;
+  }
+  #modal-modal-description a {
+    font-family: Marcellus;
+    font-size: 1.0em;
+    text-decoration: none;
+    color: #fff;
+  } 
 }

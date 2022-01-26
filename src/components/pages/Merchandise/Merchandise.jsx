@@ -19,8 +19,8 @@ function Merchandise() {
             <h2>Refund policy</h2>
             <ul>
           <li>
-            Products are returnable within the applicable return window if you’ve received them in a
-            condition that is physically damaged.</li>
+            Products are returnable within the applicable return window if you’ve received them in a condition that is physically damaged.</li>
+
             <li>
                           For damaged/ defective items, a replacement will be issued which will be delivered in a
                           number of days. The return request has to be placed on the website.
@@ -40,7 +40,9 @@ function Merchandise() {
                           We may contact you to ascertain the damage or defect in the product prior to issuing
                           replacement.
           </li>
-            <li>The decision of the fest team shall be final and binding.</li>
+          <li>
+                          The decision of the fest team shall be final and binding.
+          </li>
           </ul>
           </div>
       <Footer />

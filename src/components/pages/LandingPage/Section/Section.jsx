@@ -22,14 +22,16 @@ function Section(props) {
             {props.children}
           </p>
           <div className={Classes.section_button}>
-            <Button>{props.buttonText}</Button>
+            <a href={props.link}>
+              <Button>{props.buttonText}</Button>
+            </a>
           </div>
         </div>
         <div className={Classes.column_2}>
           {/* <h2>Column 2</h2>
           <p>Some text..</p> */}
 
-          <img src="/clubs_2X.png" className={Classes.section_image} />
+          <img src={props.imagePath} className={Classes.section_image} />
         </div>
       </div>
     </div>

@@ -26,7 +26,10 @@ function Footer() {
             <img src="/fmc_logo.png" className="image" alt="FMC" />
           </section>
           <section2>
-            <h2>POWERED BY</h2>
+            <div className="powered-by">
+              <h2>POWERED BY</h2>
+              <img src="/LAPCARE_LOGO.png" alt="POWERED BY" />
+            </div>
             <br />
             <br />
             <br />
@@ -42,8 +45,7 @@ function Footer() {
             href="https://www.facebook.com/fmcweekendiitbhu"
             target="_blank"
             aria-label="Facebook"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             <i className="fab fa-facebook" />
           </a>
           <a
@@ -51,8 +53,7 @@ function Footer() {
             href="https://www.instagram.com/fmc_weekend/"
             target="_blank"
             aria-label="Instagram"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             <i className="fab fa-instagram" />
           </a>
           <a
@@ -60,8 +61,7 @@ function Footer() {
             href="https://www.youtube.com/channel/UCt4-7kmQaPEZzPLil4RNRCw"
             target="_blank"
             aria-label="Youtube"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             <i className="fab fa-youtube" />
           </a>
           <a
@@ -69,8 +69,7 @@ function Footer() {
             href="https://in.linkedin.com/company/fmc-weekend-creative"
             target="_blank"
             aria-label="LinkedIn"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             <i className="fab fa-linkedin" />
           </a>
         </div>

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from 'react';
 import Banner from './Banner/Banner';
 import Image from './merchandise.png';
@@ -42,8 +41,7 @@ function landingPage() {
             isInternalLink
             toLink="/authentication"
             buttonStyle="btn--primary"
-            className="nav-links sign"
-          >
+            className="nav-links sign">
             SIGN IN
           </Button>
         )}
@@ -53,15 +51,18 @@ function landingPage() {
             toLink="/"
             buttonStyle="btn--primary"
             className="nav-links sign"
-            onClick={logoutHandler}
-          >
+            onClick={logoutHandler}>
             SIGN OUT
           </Button>
         )}
       </div>
 
       <Banner imagePath="/Rectangle_29.png" />
-      <Section title="ABOUT US" imagePath="/clubs_2X.png" buttonText="REGISTER">
+      <Section
+        title="ABOUT US"
+        imagePath="/clubs_2X.png"
+        buttonText="REGISTER"
+        link="/authentication">
         The long-awaited exemplary 8th edition of FMC Weekend is finally here! This time we not only
         bring to you a plethora of exciting events that will put your creative mettle to test, but
         also some awe-inspiring workshops by the notable and established names of the digital arts
@@ -70,7 +71,7 @@ function landingPage() {
         conjures within you.
       </Section>
 
-      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="KNOW MORE">
+      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="KNOW MORE" link="/events">
         The electrifying eighth edition of FMC Weekend brings to you an opportunity to compete with
         your contemporaries and establish your talent. Participate in events of creative writing,
         photography, cinematography, design and animation, discover your true potential and watch
