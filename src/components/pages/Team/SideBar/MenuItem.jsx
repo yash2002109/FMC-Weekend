@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-// import Classes from "./MenuItem.module.css";
+import Classes from './MenuItem.module.css';
 
 function MenuItem({ anchorId, itemName, active }) {
   const [anchorTarget, setAnchorTarget] = useState(null);
@@ -14,10 +13,8 @@ function MenuItem({ anchorId, itemName, active }) {
     // anchorTarget.scrollIntoView({ behavior: "smooth", block: "center" });
     const yOffset = -90;
     const y = anchorTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
     window.scrollTo({ top: y, behavior: 'smooth' });
-    document.getElementById(`#${itemName}`).onClick(() => {
-      document.getElementById(`#${itemName}`).style.color = '#FCC907';
-    });
     // const yOffset = 0;
     // const y = anchorTarget.getBoundingClientRect().top + yOffset;
     // window.scrollTo({ top: y, behavior: "smooth" });
@@ -27,13 +24,14 @@ function MenuItem({ anchorId, itemName, active }) {
 
   return (
     <li>
-      <NavLink
-        to={`#${itemName}`}
+      <a
+        href={`#${itemName}`}
         onClick={handleClick}
-        activeClassName="target"
-        aria-label={`Scroll to ${itemName}`}>
+        // className={true ? Classes.active : ""}
+        aria-label={`Scroll to ${itemName}`}
+        style={active ? { color: '#fcc907' } : { color: 'white' }}>
         <h1>{itemName}</h1>
-      </NavLink>
+      </a>
     </li>
   );
 }

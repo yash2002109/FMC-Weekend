@@ -18,17 +18,23 @@ const CardTitle = styled.h3`
 `;
 
 function EventCard(props) {
+  const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, updateItemQuantity } =
+    useCart();
   const [click, setClick] = useState(false);
-
-  const { addItem } = useCart();
+  const { addItem, inCart } = useCart();
   const { getItem } = useCart();
   const handleClick = () => {
     setClick(!click);
-    for (let item of items.length) {
-      document.getElementById(`#${props.item}`).innerText = 'Added';
-      document.getElementById(`#${props.item}`).disabled = true;
-    }
   };
+  function change() {
+    var elem = document.querySelector('.cart-btn');
+    if (elem.value == 'Add') {
+      elem.value = 'Added';
+    } else {
+      elem.value = 'Add';
+    }
+  }
+
   const options = {
     reverse: true,
     max: 15,
@@ -38,9 +44,18 @@ function EventCard(props) {
     scale: 1.06
   };
   return (
-    <Tilt className="event-card" options={options}>
-      <div>
-        <img src="/EVENTSS.png" alt="unicorn" className="card-img" />
+    <Tilt className="card" options={options}>
+      <div className="card-div">
+        <img src={props.img} alt="unicorn" className="card-img" />
+
+        <button
+          className="cart-btn"
+          onClick={() => {
+            addItem(props.item);
+            change();
+          }}>
+          Add <img src="/add-cartPURPLE_OLD_1.svg" />
+        </button>
         <div className="separator">
           <div className="line" />
           <h2>{props.type}</h2>
@@ -48,29 +63,20 @@ function EventCard(props) {
         </div>
         <CardTitle className="card-title">{props.title}</CardTitle>
         <h2 className="prizes">
-          Prize worth <span className="iconify" data-icon="ph:currency-inr"></span> {props.prize}
+          PRIZES WORTH <br></br>
+          <b>{props.prize}</b>
         </h2>
         <a href={props.link} target="_blank" className="btn1" rel="noreferrer">
           {props.ps}
         </a>
       </div>
-      <button
-        className="cart-btn"
-        id={`#${props.item}`}
-        onClick={() => {
-          addItem(props.item, 1);
-          handleClick();
-        }}>
-        Add to Cart
-        <i className="fas fa-arrow-right" />
-      </button>
     </Tilt>
   );
 }
 EventCard.defaultProps = {
   type: 'Contest',
   title: 'That’s How B’roll',
-  ps: 'Problem Statement',
+  ps: 'View Problem Statement',
   price: 150
 };
 export default EventCard;

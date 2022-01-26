@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  max-width: 100%;
 }
 
 .navbar-container {
@@ -54,11 +55,12 @@
   height: 80px;
 }
 .img{
-  margin-top: -15px;
   height: 120px;
   width: 130px;
-  color: #FCC907;
-  margin-right: 300px;
+  top: -15px;
+  color: #020202;
+  left: 2px;
+  position: absolute;
 }
 
 .nav-links {
@@ -66,11 +68,11 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
   height: 100%;
   font-family: Nunito Sans;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 15px;
   line-height: 25px;
   margin-right: 60px;

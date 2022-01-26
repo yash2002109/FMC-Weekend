@@ -26,7 +26,9 @@ import AllEvents from './components/pages/Events/MobileView/AllEvents';
 
 function App() {
   const authCtx = useContext(AuthContext);
-
+  if (window.innerWidth <= 1280) {
+    document.body.style.backgroundImage = 'none';
+  }
   return (
     <>
       <Router>

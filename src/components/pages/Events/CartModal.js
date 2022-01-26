@@ -22,7 +22,7 @@ export default function Cart(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, totalUniqueItems } =
+  const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, updateItemQuantity } =
     useCart();
   const handlePayment = () => {
     document.querySelector('.payment-modal').style.display = 'block';
@@ -56,6 +56,7 @@ export default function Cart(props) {
                     <th>Event Name</th>
                     <th>Type</th>
                     <th>Price</th>
+                    <th></th>
                   </tr>
                   {items.map((item, index) => {
                     return (
@@ -65,9 +66,9 @@ export default function Cart(props) {
                         <td>
                           <i className="fas fa-rupee-sign"></i> {item.price}
                         </td>
-                        <th className="trash-btn" onClick={() => removeItem(item.id)}>
+                        <td className="trash-btn" onClick={() => removeItem(item.id)}>
                           <i className="fas fa-trash"></i>
-                        </th>
+                        </td>
                       </tr>
                     );
                   })}

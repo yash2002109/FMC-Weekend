@@ -8,6 +8,7 @@
   font-style: Nunito Sans;
   overflow-x: hidden;
   z-index: 999;
+  max-width: 1500px;
 }
 
 /* Social Icons */
