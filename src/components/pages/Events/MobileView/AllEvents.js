@@ -1,10 +1,10 @@
 import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
-import CartModal from '../CartModal';
 import { Link } from 'react-router-dom';
+import CartModal from '../CartModal';
 
-function Photography() {
+function AllEvents() {
   return (
     <div>
       <CartModal />
@@ -14,7 +14,7 @@ function Photography() {
         </Link>
         <div className="card-container">
           <div className="event-cards">
-            {data.photographyData.map((item, index) => {
+            {data.allEventsData.map((item, index) => {
               return (
                 <EventCard
                   img={item.img}
@@ -34,4 +34,4 @@ function Photography() {
   );
 }
 
-export default Photography;
+export default AllEvents;

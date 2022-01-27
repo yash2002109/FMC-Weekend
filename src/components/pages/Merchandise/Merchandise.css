@@ -21,6 +21,28 @@
     text-align: center;
 
 }
+.separator{
+    display:flex;
+    align-items: center;
+  }
+  
+  .separator .line{
+    height: 1px;
+    flex: 1;
+    margin: 15px;
+    background-color: #FCC907;
+  }
+  
+  .separator h2{
+    font-family: Marcellus;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FCC907;
+    line-height: 20px;
+    letter-spacing: 0em;
+    margin-top: 20px;
+  }
 .merch-content span {
     font-size: 1.8em;
     font-family: Marcellus;
@@ -31,16 +53,57 @@
     font-family: Marcellus;
     font-size: 1.2em;
 }
+
+.terms ul{
+    margin-right: 100px;
+    padding: 30px;
+    color: #FCC907;
+    width: 100%;
+    font-size: 1.2em;
+    padding-left: 60px;
+}
+.terms ul li{
+  margin-right: 100px;
+  padding: 20px;
+  padding-left: 60px;
+  list-style: disc;
+  font-family: Marcellus;
+  color: #FCC907;
+}
+.terms h2 {
+    font-family: Marcellus;
+    font-size: 1.8em;
+    color: #FCC907;
+    padding-left: 20px;
+    text-align: left;
+}
+
 @media screen and (max-width: 768px) {
     .merch {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-left: 30px;
+        padding-left: 10px;
         width: 90vw;
     }
     .merch-content {
         font-size: 1.0em;
     }
-    .merch-card {}
+    .terms ul{
+      margin-right: 100px;
+      /* padding: 30px; */
+      color: #FCC907;
+      width: 100%;
+      font-size: 1.2em;
+      padding-left: 40px;
+  }
+  .terms ul li{
+    margin-right: 100px;
+    padding: 20px;
+    padding-left: 20px;
+    width: 100%;
+    list-style: disc;
+    font-family: Marcellus;
+    color: #FCC907;
+  }
 }

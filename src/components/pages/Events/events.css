@@ -1,5 +1,6 @@
 body {
-  background: #1D033E;  
+  background: #1D033E;
+  font-family: Marcellus;  
 }
 .tabs {
   color: #fff;
@@ -19,7 +20,7 @@ body {
   margin-right: 50px;
   margin-top: 40px;
   width: 70vw;
-  height: 480px;
+  height: 450px;
   transition-duration: 300ms;
   transition-property: transform;
   transition-timing-function: ease-out;
@@ -49,7 +50,7 @@ text-align: center;
 
 .separator h2{
   font-family: Marcellus;
-  font-size: 16px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
   color: #FCC907;
@@ -58,7 +59,7 @@ text-align: center;
   margin-top: 20px;
 }
 .card-img {
-  object-fit:cover;
+  object-fit: cover;
   position: relative;
   height: 250px;
   width: 100%;
@@ -149,7 +150,16 @@ position: relative;
 color: #F9F4F5;
 text-transform: capitalize;
 }
-
+#vertical-tab-0:focus,
+#vertical-tab-1:focus,
+#vertical-tab-2:focus,
+#vertical-tab-3:focus,
+#vertical-tab-4:focus,
+#vertical-tab-5:focus,
+#vertical-tab-6:active {
+  color: #FCC907;
+  border-right: none;
+}
 .sidebar {
   display: block;
 }
@@ -199,6 +209,8 @@ text-transform: capitalize;
   position: absolute;
   border: none;
   bottom: 80%;
+  cursor: pointer;
+  z-index: 1;
   margin: auto;
 }
 .cart:hover {
@@ -206,11 +218,21 @@ text-transform: capitalize;
   color:#27094B;
   transition: all 0.6s ease-in-out;
 }
+.cart-modal {
+  display: inline-block;
+  overflow-x: hidden;
+  margin: auto;
+}
 #modal-modal-title {
   color: #fff;
+  font-family: Marcellus;
+  border-bottom: 2px solid #FCC907;
+  padding-bottom: 20px;
 }
 #modal-modal-description {
   color:#FCC907;
+  font-family: Marcellus;
+  border-bottom: 2px solid #FCC907;
 }
 .table {
   background: #27094B;
@@ -220,6 +242,7 @@ text-transform: capitalize;
   background: #fff;
   color:#1D033E;
   margin-right: 30px;
+  margin-top: 20px;
 }
 .btn-danger:hover {
   background: transparent;
@@ -231,6 +254,7 @@ text-transform: capitalize;
   background:#FCC907;
   color:#1D033E;
   margin-right: -30px;
+  margin-top: 20px;
 }
 .btn-primary:hover {
   background: transparent;
@@ -241,6 +265,38 @@ text-transform: capitalize;
 .btns {
   padding: 10px;
 }
+.payment-modal {
+  display: none;
+  font-family: Marcellus;
+  border: 2px solid #FCC907;
+}
+#modal-modal-description ul li {
+  display: flex;
+  padding: 20px;
+}
+#modal-modal-description ul li span {
+  color: #fff;
+  font-family: Marcellus;
+  font-size: 1.4em;
+}
+#modal-modal-description  h3 {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  margin-top: 3px;
+  padding-left: 20px;
+}
+#modal-modal-description p {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  padding-left: 20px;
+}
+#modal-modal-description a {
+  font-family: Marcellus;
+  font-size: 1.4em;
+  text-decoration: none;
+  padding: 20px;
+  color: #fff;
+} 
 @media screen and (max-width: 786px) {
   .event-cards {
     flex-wrap: wrap;
@@ -335,10 +391,10 @@ text-transform: capitalize;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
-    z-index: 999;
+    z-index: 1;
     width: 100px;
     height: 40px; 
-    left: 30%; 
+    left: 38%; 
     border: 2px solid #FCC907;
     color: #FCC907;
     padding: 10px;
@@ -355,4 +411,30 @@ text-transform: capitalize;
    .trash-btn {
      display: none;
    }
+   #modal-modal-description ul li {
+    display: flex;
+    padding: 0px;
+  }
+  #modal-modal-description ul li span {
+    color: #fff;
+    font-family: Marcellus;
+    padding-right: 5px;
+    font-size: 0.8em;
+  }
+  #modal-modal-description  h3 {
+    font-family: Marcellus;
+    font-size: 0.9em;
+    padding-left: 4px;
+    margin-top: 3px;
+  }
+  #modal-modal-description p {
+    font-family: Marcellus;
+    font-size: 0.8em;
+  }
+  #modal-modal-description a {
+    font-family: Marcellus;
+    font-size: 1.0em;
+    text-decoration: none;
+    color: #fff;
+  } 
 }
