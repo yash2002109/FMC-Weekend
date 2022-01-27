@@ -20,6 +20,7 @@ function DashBoardNew() {
   });
   const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
   const logoutHandler = () => {
+    console.log("yash");
     sessionStorage.clear();
     window.location.href = '/';
     closeMobileMenu();
@@ -133,9 +134,9 @@ function DashBoardNew() {
       </div>
       <div className={Classes.logout_button}>
       <Button
-        isInternalLink
-        toLink="/"
-        buttonStyle="btn--primary"
+        // isInternalLink
+        // toLink="/"
+        // buttonStyle="btn--primary"
         // className="nav-links sign"
         onClick={logoutHandler}>
         LOG OUT
