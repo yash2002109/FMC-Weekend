@@ -102,12 +102,15 @@ function Navbar() {
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <div className="navbar_cart">
-        <NavLink to="/cart">
-              <button toLink="/cart" className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'} onClick={closeMobileMenu}>
-                <span id="quantity">{totalItems} </span>
-                <i className="fas fa-shopping-cart"></i>
-              </button>
-            </NavLink>
+          <NavLink to="/cart">
+            <button
+              toLink="/cart"
+              className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'}
+              onClick={closeMobileMenu}>
+              <span id="quantity">{totalItems} </span>
+              <i className="fas fa-shopping-cart"></i>
+            </button>
+          </NavLink>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item first_item">
@@ -147,7 +150,7 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             {button && sessionStorage.getItem('tokenID') && (
               <Button
                 isInternalLink
@@ -158,16 +161,26 @@ function Navbar() {
                 DASHBOARD
               </Button>
             )}
-          </li>
+          </li> */}
           <NavLink to="/cart">
-              <button toLink="/cart" className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'} onClick={closeMobileMenu}>
-                <span id="quantity">{totalItems} </span>
-                <i className="fas fa-shopping-cart"></i>
-              </button>
-            </NavLink>
+            <button
+              toLink="/cart"
+              className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'}
+              onClick={closeMobileMenu}>
+              <span id="quantity">{totalItems} </span>
+              <i className="fas fa-shopping-cart"></i>
+            </button>
+          </NavLink>
           <li className="nav-item">
-
-            {button && !sessionStorage.getItem('tokenID') && (
+            {(button && sessionStorage.getItem('isLoggedIn')==true) ? (
+              <Button
+                isInternalLink
+                toLink="/dashboard"
+                buttonStyle="btn--primary"
+                className="nav-links sign">
+                Dashboard
+              </Button>
+            ) : (
               <Button
                 isInternalLink
                 toLink="/authentication"
@@ -175,15 +188,6 @@ function Navbar() {
                 className="nav-links sign"
                 onClick={closeMobileMenu}>
                 SIGN IN
-              </Button>
-            )}
-            {button && sessionStorage.getItem('tokenID') && (
-              <Button
-                isInternalLink
-                toLink="/dashboard"
-                buttonStyle="btn--primary"
-                className="nav-links sign">
-                Dashboard
               </Button>
             )}
           </li>
