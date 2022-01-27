@@ -161,41 +161,23 @@ function Navbar() {
           </li>
           <li className="nav-item">
             {button && !sessionStorage.getItem('tokenID') && (
-              // <Button
-              //   isInternalLink
-              //   toLink="/authentication"
-              //   buttonStyle="btn--primary"
-              //   className="nav-links sign"
-              //   onClick={closeMobileMenu}>
-              //   SIGN IN
-              // </Button>
-
-              // <div className={Classes.authenticateButton}>
               <Button
                 isInternalLink
-                // toLink="/authentication"
+                toLink="/authentication"
                 buttonStyle="btn--primary"
                 className="nav-links sign"
                 onClick={closeMobileMenu}>
-                              SIGN IN 
-              </Button>                
-                // <GoogleLogin
-                //   clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-                //   buttonText="Sign in"
-                //   onSuccess={handleLogin}
-                //   onFailure={handleFailure}
-                //   cookiePolicy="single_host_origin"></GoogleLogin>
-
-              // </div>
+                SIGN IN
+              </Button>
             )}
             {button && sessionStorage.getItem('tokenID') && (
               <Button
                 isInternalLink
-                toLink="/"
+                toLink="/dashboard"
                 buttonStyle="btn--primary"
                 className="nav-links sign"
-                onClick={logoutHandler}>
-                SIGN OUT
+              >
+                Dashboard
               </Button>
             )}
           </li>
