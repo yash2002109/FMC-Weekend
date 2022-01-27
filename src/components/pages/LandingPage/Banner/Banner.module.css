@@ -4,4 +4,39 @@
 
 .image {
     width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
 }
+.logo_dates {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 200px;
+    margin: auto;
+    width: 55vw;
+    right: 26vw;
+}
+.mobile_hero {
+    display: none;
+}
+
+@media screen and (max-width: 786px) {
+
+    .mobile_hero {
+        display: block;
+    }
+    .image {
+        display: none;
+    }
+    .logo_dates {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70vw;
+        left: 60px;
+        top: 150px
+    }
+  }

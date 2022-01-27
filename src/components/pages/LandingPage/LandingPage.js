@@ -55,7 +55,9 @@ function landingPage() {
         )}
       </div>
 
-      <Banner imagePath="/weekennd_herosection-01.svg" />
+      <Banner imagePath="/HERO-WO-LOGO-011.svg" />
+
+      <div className={Classes.texture_bg}></div>
       <img src="/SECT_DIV_LINE.svg" alt="line" className={Classes.line_sep} />
       <Section
         title="ABOUT US"
@@ -71,8 +73,8 @@ function landingPage() {
         experience some of the most ecstatic moments of your lives as the passion for digital arts
         conjures within you.
       </Section>
-
-      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="KNOW MORE" link="/events">
+      <img src="/SECT_DIV_LINE.svg" alt="line" className={Classes.line_sep1} />
+      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="SEE ALL EVENTS" link="/events">
         <img src="/LINEE.svg" alt="line" className={Classes.event_sep} />
         The electrifying eighth edition of FMC Weekend brings to you an opportunity to compete with
         your contemporaries and establish your talent. Participate in events of creative writing,

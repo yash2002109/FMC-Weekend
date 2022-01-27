@@ -1,3 +1,7 @@
+
+body {
+    height: 100vh;
+}
 .cart-page {
     background-color: #1b083d;
     position: relative;
@@ -41,6 +45,7 @@
     border-radius: 10px;
     display: flex;
     padding: 20px;
+    padding-right: 20px;
     color: #FCC907;
     float: right;
     text-align: center;

@@ -28,15 +28,9 @@ const data = {
   contentData: [
     {
       id: 7,
-      img: 'https://drive.google.com/uc?export=view&id=1Qyzmc_wo_5vZmclGooBopcosD8MwG6xB',
+      img: '/smriti.jpeg',
       position: 'Content Head',
       name: 'Smriti Snehil'
-    },
-    {
-      id: 7,
-      img: 'https://drive.google.com/uc?export=view&id=1hsANNhclgQI7t03FSAbGnBGqNJFjCZ4k',
-      position: 'Content Head',
-      name: 'Akansha Verma'
     },
     {
       id: 7,
@@ -74,7 +68,7 @@ const data = {
     },
     {
       id: 8,
-      img: 'https://drive.google.com/uc?export=view&id=1ZPNl5EoD6_XMxbfoK2OTUQR8WtNXYbk5',
+      img: '/preety.jpeg',
       position: 'Public Relations Head',
       name: 'Preety Sarwa'
     }
@@ -82,7 +76,7 @@ const data = {
   socialMediaData: [
     {
       id: 9,
-      img: 'https://drive.google.com/uc?export=view&id=1hsANNhclgQI7t03FSAbGnBGqNJFjCZ4k',
+      img: '/akanksha.jpeg',
       position: 'Social Media Head',
       name: 'Akanksha Verma'
     },
@@ -106,7 +100,7 @@ const data = {
     },
     {
       id: 13,
-      img: 'https://drive.google.com/uc?export=view&id=1Hj2VBlwXBgCDAUNOPCc0bQGdNAl9tuDn',
+      img: '/sfsf.jpeg',
       position: 'Social Media Head',
       name: 'Siddhart Verma'
     }
@@ -126,7 +120,7 @@ const data = {
     },
     {
       id: 16,
-      img: 'https://drive.google.com/uc?export=view&id=16iLkVRoudj5ER9vA9X1BNZN9ldZxSK2s',
+      img: '/shreyash.jpeg',
       position: 'Tech Head',
       name: 'Shreyash Singh'
     }
@@ -154,7 +148,7 @@ const data = {
     },
     {
       id: 27,
-      img: 'https://drive.google.com/uc?export=view&id=1PFdOPVa7U1GOWhIEBBfF0wTr8eJ_LfDI',
+      img: '/manhar.jpeg',
       position: 'Event Head',
       name: 'Manhar Joshi'
     }
@@ -162,7 +156,7 @@ const data = {
   convenorData: [
     {
       id: 20,
-      img: 'https://drive.google.com/uc?export=view&id=1K30q0HxCCT-cz2B8GoonKbQzWLBzWkMh',
+      img: '/parth.jpeg',
       position: 'Convenor',
       name: 'Parth Khandelwal'
     },
@@ -188,13 +182,13 @@ const data = {
     },
     {
       id: 24,
-      img: 'https://drive.google.com/uc?export=view&id=1HFG-03UlYRscG-odI4DuzTT6hWlrfheQ',
+      img: '/poojith.jpeg',
       position: 'Jt. General Secretary',
       name: 'Poojith'
     },
     {
       id: 25,
-      img: 'https://drive.google.com/uc?export=view&id=1YT65Q0C3l6oC0SNcEYdPZUC6xzcm4H7C',
+      img: '/Nitisha.jpeg',
       position: 'Jt. General Secretary',
       name: 'Nitisha Kothari'
     }
@@ -208,7 +202,7 @@ const data = {
     },
     {
       id: 27,
-      img: 'https://drive.google.com/uc?export=view&id=1PFdOPVa7U1GOWhIEBBfF0wTr8eJ_LfDI',
+      img: '/manhar.jpeg',
       position: 'Cine Club Secretary',
       name: 'Manhar Joshi'
     },
@@ -220,7 +214,7 @@ const data = {
     },
     {
       id: 29,
-      img: 'https://drive.google.com/uc?export=view&id=19br76YNS1hhjS9xaMX1znGpqxKcKbpQ0',
+      img: '/sudhanva.jpeg',
       position: 'Animation Club Secretary',
       name: 'Sudhanva Rao'
     },

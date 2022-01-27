@@ -5,7 +5,7 @@
   position: relative;
   padding: 0;
   margin: 0;
-  font-family: Nunito Sans;
+  font-family: Marcellus;
   font-weight: 300;
   font-size: 40px;
   color:#FCC907;
@@ -15,9 +15,10 @@
   font-size: 36px;
   font-weight: 800;
   letter-spacing: 0;
+  padding-left: 37px;
   line-height: 1.5em;
-  margin-top: 20px;
-  padding-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 5px;
   position: relative;
 }
 .cards {
@@ -29,12 +30,14 @@
 .mssg {
   margin-top: 20px;
   text-align: left;
+  margin-right: 50px;
+  font-family: Nunito Sans;
 }
 .mssg h2 {
   color: #FCC907;
   font-family: Marcellus;
   font-size: 1.2em;
   margin-top: 20px;
-  margin: 20px;
+  margin: 27px 36px;
   text-align: left;
 }

@@ -28,11 +28,6 @@ function Sponsors(props) {
             <div className="line" />
           </div>
           <img src="https://drive.google.com/uc?export=view&id=1nLK6rWZGLfCfdb7Y2FMdR7lI7W6-FT0-" />
-          <div className="separator-1">
-            <div className="line" />
-            <h2>Presents</h2>
-            <div className="line" />
-          </div>
         </div>
         <div className="cards-sponsor">
           <SponsorCard

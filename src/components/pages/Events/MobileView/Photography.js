@@ -1,13 +1,11 @@
 import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
-import CartModal from '../CartModal';
 import { Link } from 'react-router-dom';
-
+import Footer from '../../../Footer';
 function Photography() {
   return (
-    <div>
-      <CartModal />
+    <div style={{ background: '#1D033E', overflow: 'hidden' }}>
       <section className="section">
         <Link to="/events" className="back-btn">
           Back
@@ -30,6 +28,7 @@ function Photography() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

@@ -13,7 +13,8 @@
 }
 .sponsorcardImg {
   height: 200px;
-  width: 200px;
+  width: 100%;
+  background-color: #1b083d;
 }
 .previous-sponsors {
   width: 80vw;

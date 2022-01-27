@@ -85,7 +85,6 @@ export default function VerticalTabs() {
         <Tab label="Media" {...a11yProps(3)} />
         <Tab label="Design" {...a11yProps(4)} />
         <Tab label="Animation" {...a11yProps(5)} />
-        <Tab label="All Events and Workshops" {...a11yProps(6)} />
       </Tabs>
 
       <TabPanel value={value} index={0} className="tab-panel">
@@ -192,25 +191,6 @@ export default function VerticalTabs() {
         <div className="card-container">
           <div className="event-cards">
             {data.animationData.map((item, index) => {
-              return (
-                <EventCard
-                  img={item.img}
-                  title={item.title}
-                  type={item.type}
-                  link={item.link}
-                  price={item.price}
-                  item={item}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        <div className="card-container">
-          <div className="all-events">
-            {data.allEventsData.map((item, index) => {
               return (
                 <EventCard
                   img={item.img}

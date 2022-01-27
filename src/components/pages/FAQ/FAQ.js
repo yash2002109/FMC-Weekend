@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import { Data } from './Data';
-import HeaderFAQ from '../../HeaderFAQ';
 import Footer from '../../Footer';
 // import './FAQ.css';
 
@@ -14,7 +13,7 @@ const AccordionSection = styled.div`
   justify-content: center;
   position: relative;
   height: 120vh;
-  width: 98vw;
+  width: 100%;
   overflow-x: hidden;
   background: #1d033e;
   @media (max-width: 768px) {
@@ -26,7 +25,7 @@ const Container = styled.div`
   position: absolute;
   top: 5%;
   color: #27094b;
-  max-width: 900px;
+  max-width: 1500px;
 `;
 
 const Wrap = styled.div`
@@ -86,7 +85,6 @@ function Accordion() {
 
   return (
     <div className="HEADER">
-      <HeaderFAQ />
       <IconContext.Provider value={{ color: '#FCC907', size: '25px' }}>
         <AccordionSection className="accordion">
           <Container>

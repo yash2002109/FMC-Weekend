@@ -2,12 +2,10 @@ import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
 import { Link } from 'react-router-dom';
-import CartModal from '../CartModal';
 
 function AllEvents() {
   return (
     <div>
-      <CartModal />
       <section className="section">
         <Link to="/events" className="back-btn">
           Back

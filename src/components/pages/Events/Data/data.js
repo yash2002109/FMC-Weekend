@@ -175,16 +175,6 @@ const data = {
       link: 'https://drive.google.com/file/d/17n4rzKwRtKgCljrkxgUF6DZ02qwsZOG_/view?usp=sharing',
       price: 129
     }
-  ],
-  allEventsData: [
-    {
-      id: 21,
-      img: '',
-      type: 'Workshop',
-      title: 'All Workshops',
-      link: '',
-      price: 649
-    }
   ]
 };
 

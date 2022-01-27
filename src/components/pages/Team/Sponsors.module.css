@@ -6,11 +6,11 @@
 }
 .sidebar {
   height: 100%;
-  width: calc(180px + 10vw);
-  /* min-width: 200px; */
+  max-width: 30vw;
   position: fixed;
   top: 20;
-  left: 100px;
+  left: 6vw;
+  width: 300px;
   background: transparent;
   overflow-x: hidden;
   padding-top: 20px;
@@ -23,14 +23,15 @@
 }
 .sidebar h1 {
   font-size: 1.2em;
-  font-family: Nunito Sans;
+  font-family: Marcellus;
 }
 .sidebar a {
   padding: 15px;
   text-decoration: none;
   color: #fff;
-  font-family: Nunito Sans;
+  font-family: Marcellus;
   display: block;
+  margin-left: 50px;
   list-style: none;
 }
 .sidebar .target {
@@ -80,6 +81,7 @@
   .sidebar a {
     text-align: center;
     float: none;
+    margin-left: 0px;
   }
 
   div.main {
