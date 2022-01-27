@@ -1,11 +1,26 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Fragment, useContext, useEffect, useState } from 'react';
 import AuthContext from '../../../store/auth-context';
 import Loading from '../../Loading';
 import Classes from './Dashboard.module.css';
-
+import { Button } from '../../Button';
 function Dashboard() {
   const [isLoading, setIsLoading] = useState(false);
   const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+  const authCtx = useContext(AuthContext);
+
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const logoutHandler = () => {
+    sessionStorage.clear();
+    window.location.href = '/';
+    closeMobileMenu();
+  };
   const [userData, setUserData] = useState({
     name: 'John Doe',
     email: 'foo@foo.com',

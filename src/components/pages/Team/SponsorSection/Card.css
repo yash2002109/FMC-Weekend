@@ -53,6 +53,7 @@
   width: 100%;
   overflow: hidden;
   transition: all .5s ease;
+  background-color: #27094B;
 }
 .cardTitle {
   margin: 0 auto;

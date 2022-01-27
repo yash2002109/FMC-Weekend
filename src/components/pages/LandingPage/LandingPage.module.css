@@ -13,7 +13,19 @@ body {
   justify-content: center;
 
 }
-@media screen and (max-width: 600px) {
+.about_sep {
+  position: absolute;
+  left: 250px;
+  top: -57px; 
+}
+.event_sep {
+  position: absolute;
+  left: 220px;
+  top: -57px; 
+}
+.line_sep {
+}
+@media screen and (max-width: 786px) {
 
   .login_button {
     width: 100vw;
@@ -21,7 +33,16 @@ body {
   .login_button button {
     width: 100vw;
   }
-
+  .about_sep {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .event_sep {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+  }
 
 
 }

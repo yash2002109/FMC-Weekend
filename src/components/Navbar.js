@@ -4,10 +4,11 @@ import { Button } from './Button';
 import './Navbar.css';
 import logo from './navlogo.png';
 import AuthContext from '../store/auth-context';
-
+import { useCart } from 'react-use-cart';
 function Navbar() {
   const authCtx = useContext(AuthContext);
 
+  const { totalItems } = useCart();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,7 +47,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <NavLink exact to="/">
-          <img src={logo} className="img" alt="FMC" />
+          <img src="/FMC_GOLDEN_NAV.svg" className="img" alt="FMC" />
         </NavLink>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -59,6 +60,15 @@ function Navbar() {
               activeClassName="target"
               onClick={closeMobileMenu}>
               EVENTS
+            </NavLink>
+          </li>
+          <li className="nav-item first_item">
+            <NavLink
+              to="/passes"
+              className="nav-links"
+              activeClassName="target"
+              onClick={closeMobileMenu}>
+              PASSES
             </NavLink>
           </li>
           <li className="nav-item">
@@ -86,6 +96,27 @@ function Navbar() {
               activeClassName="target"
               onClick={closeMobileMenu}>
               FAQ
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            {button && sessionStorage.getItem('tokenID') && (
+              <Button
+                isInternalLink
+                toLink="/"
+                buttonStyle="btn--primary"
+                className="nav-links sign"
+                onClick={logoutHandler}>
+                DASHBOARD
+              </Button>
+            )}
+          </li>
+          <li className="nav-item">
+            <NavLink to="/cart">
+              <button toLink="/cart" className="cartBtn" onClick={closeMobileMenu}>
+                <span id="quantity">{totalItems} </span>
+                <i className="fas fa-shopping-cart"></i>
+              </button>
             </NavLink>
           </li>
           <li className="nav-item">

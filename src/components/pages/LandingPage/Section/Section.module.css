@@ -65,11 +65,11 @@
 }
 
 .section_image {
-  padding-left: 3vw;
+  padding-left: 0.6vw;
   height: 100%;
   object-fit: contain;
   /* width: 100%; */
-  width: 40vw;
+  width: 35vw;
 }
 
 .section_title {
@@ -104,9 +104,9 @@
 .section_button {
   display: flex;
   position: absolute;
-  left: 0.5vw;
+  left: 2vw;
   width: 250px;
-  bottom: -5vh;
+  bottom: -10vh;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;

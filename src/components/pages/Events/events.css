@@ -1,8 +1,6 @@
 body {
   font-family: Marcellus;
-  
   background-color: #1D033E;
-  
 }
 .event_page {
   background: #1D033E;
@@ -15,7 +13,7 @@ body {
   position: relative;
 }
 .card-container {
-  width: 70vw;
+  width: 68vw;
   position: relative;
 }
 .card-div {
@@ -48,9 +46,9 @@ body {
 
 .separator .line{
   height: 0.5px;
-  margin-top: 20px;
+  margin-top: 15px;
   flex: 2;
-  margin: 4px;
+  margin: 10px;
   background-color: #FCC907;
 }
 
@@ -63,7 +61,7 @@ body {
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0em;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .card-img {
   /* object-fit: cover; */
@@ -77,12 +75,12 @@ body {
  margin: 0 auto;
  justify-content: space-between;
  width: 80vw;
- padding-right: 40px;
+ padding-right: 80px;
  padding-left: 40px;
 }
 .all-events {
   display: flex;
-  width: 60vw;
+  width: 30vw;
   padding-left: 20px;
   margin: 0 auto;
 }
@@ -119,7 +117,7 @@ width: 80vw;
   line-height: 16px;
   letter-spacing: 0em;
   text-align: center;
-
+ margin-top: 20px;
 }
 .btn1:hover {
   color: #fff
@@ -135,17 +133,19 @@ width: 80vw;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  margin-top: -10px;
+  margin-top: 10px;
   line-height: 30px;
   letter-spacing: 0em;
   text-align: center;
 }
-.event-card .prizes {
+.card .prizes {
   font-family: Nunito Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+  color: #FCC907;
   line-height: 18px;
+  margin-top: 20px;
   letter-spacing: 0em;
   text-align: center;
 }
@@ -208,9 +208,6 @@ width: 80vw;
 }
 .showOnMobile {
   display: none;
-}
-.box1 {
-  width: 80vw;
 }
 #menuBtn {
   display: none;
@@ -340,7 +337,13 @@ width: 80vw;
   padding: 20px;
   color: #fff;
 } 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 1006px) {
+  .event_page {
+    background-color: #1D033E;
+  }
+  body {
+    background: #1D033E;
+  }
   .event-cards {
     flex-wrap: wrap;
   }
@@ -350,10 +353,9 @@ width: 80vw;
   .showOnMobile {
     display: block;
   }
-  .event-card {
-    /* width: 0vw; */
-    
-  margin-right: 0px;
+  .card {
+    /* width: 60vw; */
+    margin-right: 0px;
     flex-wrap: wrap;
   }
   .workshop-cards {
@@ -366,7 +368,6 @@ width: 80vw;
    right: 8%;
    }
    .tabs {
-     float: none;
    }
    #menuBtn {
     display: block;

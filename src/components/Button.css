@@ -19,7 +19,7 @@ font-size: 18px;
     color: #242424;
     border: 1px solid var(--primary);
     position: absolute;
-    top: 16px;
+    top: 20px;
     right: 20px;
   }
   
@@ -33,7 +33,7 @@ font-size: 18px;
   
   .btn--medium {
     padding: 8px 20px;
-    font-size: 18px;
+    font-size: 14px;
   }
   
   .btn--large {

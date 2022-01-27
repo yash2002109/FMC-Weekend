@@ -178,14 +178,6 @@ const data = {
   ],
   allEventsData: [
     {
-      id: 20,
-      img: '',
-      type: 'Contest',
-      title: 'All Events',
-      link: '',
-      price: 649
-    },
-    {
       id: 21,
       img: '',
       type: 'Workshop',

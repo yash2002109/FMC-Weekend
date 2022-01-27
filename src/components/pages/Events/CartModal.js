@@ -32,10 +32,6 @@ export default function Cart(props) {
   }
   return (
     <div>
-      <button onClick={handleOpen} className="cart">
-        <span id="quantity">{totalItems} </span>
-        <i className="fas fa-shopping-cart"></i>
-      </button>
       <Modal
         open={open}
         onClose={handleClose}
