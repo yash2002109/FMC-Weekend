@@ -9,8 +9,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
+import CheckoutButton from './CheckoutButton/CheckoutButton';
+import CartCard_2 from './CartCard_2';
+
 function Cart(props) {
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, updateItemQuantity } =
@@ -22,46 +25,50 @@ function Cart(props) {
   return (
     <section className="cart-page">
       <h1>Cart</h1>
-      <div className="col-12">
+      <div className="purchase_details">
         <h3>Total Items: ({totalItems})</h3>
+        <h3>Total Price = ₹ {cartTotal} </h3>
+        <div className="checkout_button">          
+          <CheckoutButton>CHECKOUT</CheckoutButton>
+        </div>
 
-        <a href="/events">
+        {/* <a href="/events">
           <div className="add-more-cards">
             <span>+</span>
             <h3>Purchase More Cards</h3>
           </div>
-        </a>
-        {items.map((item, index) => {
-          return (
-            <div key={index} className="cart-container">
-              <EventCard
-                className="cart-card"
-                img={item.img}
-                title={item.title}
-                type={item.type}
-                link={item.link}
-                price={item.price}
-                prize={item.prize}
-                item={item}
-                key={index}
-              />
-            </div>
-          );
-        })}
+        </a> */}
+        <div className="cart_cards">
+          {items.map((item, index) => {
+            return (
+              <div key={index} className="cart-container">
+                <CartCard_2
+                  className="cart-card"
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  prize={item.prize}
+                  item={item}
+                  key={index}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div className="price-data">
+      {/* <div className="price-data">
         <h3>Total Price = ₹ {cartTotal} </h3>
-      </div>
-      <Button isInternalLink toLink="/" buttonStyle="btn--primary" className="">
-        CHECKOUT
-      </Button>
-      {/* <Modal
+      </div> */}
+
+      <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         className="payment-modal">
-        <Box sx={style}>
+        <Box>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <h1>Payment Details</h1>
           </Typography>
@@ -102,7 +109,7 @@ function Cart(props) {
             </a>
           </Typography>
         </Box>
-      </Modal> */}
+      </Modal>
     </section>
   );
 }
