@@ -52,9 +52,10 @@ function EventCard(props) {
           className="cart-btn"
           onClick={() => {
             addItem(props.item);
-            change();
-          }}>
-          Add <img src="/add-cartPURPLE_OLD_1.svg" />
+            // change();
+          } } disabled={inCart(props.item.id)}>
+          {inCart(props.item.id) ? "Added" : "Add"} 
+          {inCart(props.item.id) ? "" : <img src="/add-cartPURPLE_OLD_1.svg" />} 
         </button>
         <div className="separator">
           <div className="line" />

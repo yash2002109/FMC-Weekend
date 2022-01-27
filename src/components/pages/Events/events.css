@@ -495,3 +495,7 @@ width: 80vw;
     color: #fff;
   } 
 }
+
+button:disabled{
+  color: #27094B;  
+}
