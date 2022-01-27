@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from './Button';
 import './Navbar.css';
 import logo from './navlogo.png';
 import AuthContext from '../store/auth-context';
-
+import { useCart } from 'react-use-cart';
 function Navbar() {
   const authCtx = useContext(AuthContext);
 
+  const { totalItems } = useCart();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,63 +44,95 @@ function Navbar() {
   window.addEventListener('resize', showButton);
 
   return (
-
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/">
-          <img src={logo} className="img" alt="FMC" />
-        </Link>
+        <NavLink exact to="/">
+          <img src="/FMC_GOLDEN_NAV.svg" className="img" alt="FMC" />
+        </NavLink>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item first_item">
-            <Link to="/events" className="nav-links active" onClick={closeMobileMenu}>
+            <NavLink
+              to="/events"
+              className="nav-links"
+              activeClassName="target"
+              onClick={closeMobileMenu}>
               EVENTS
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/merchandise" className="nav-links active" onClick={closeMobileMenu}>
-              MERCHANDISE
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/team" className="nav-links active" onClick={closeMobileMenu}>
+            <NavLink
+              to="/team"
+              className="nav-links"
+              activeClassName="target"
+              onClick={closeMobileMenu}>
               TEAM
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/sponsors" className="nav-links active" onClick={closeMobileMenu}>
+            <NavLink
+              to="/sponsors"
+              className="nav-links"
+              activeClassName="target"
+              onClick={closeMobileMenu}>
               SPONSORS
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/FAQ" className="nav-links active" onClick={closeMobileMenu}>
+            <NavLink
+              to="/FAQ"
+              className="nav-links"
+              activeClassName="target"
+              onClick={closeMobileMenu}>
               FAQ
-            </Link>
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            {button && sessionStorage.getItem('tokenID') && (
+              <Button
+                isInternalLink
+                toLink="/"
+                buttonStyle="btn--primary"
+                className="nav-links sign"
+                onClick={logoutHandler}>
+                DASHBOARD
+              </Button>
+            )}
+          </li>
+          <li className="nav-item">
+            <NavLink to="/cart">
+              <button toLink="/cart" className="cartBtn" onClick={closeMobileMenu}>
+                <span id="quantity">{totalItems} </span>
+                <i className="fas fa-shopping-cart"></i>
+              </button>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            {button && !sessionStorage.getItem('tokenID') && (
+              <Button
+                isInternalLink
+                toLink="/authentication"
+                buttonStyle="btn--primary"
+                className="nav-links sign"
+                onClick={closeMobileMenu}>
+                SIGN IN
+              </Button>
+            )}
+            {button && sessionStorage.getItem('tokenID') && (
+              <Button
+                isInternalLink
+                toLink="/"
+                buttonStyle="btn--primary"
+                className="nav-links sign"
+                onClick={logoutHandler}>
+                SIGN OUT
+              </Button>
+            )}
           </li>
         </ul>
-        {button && !sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/authentication"
-            buttonStyle="btn--primary"
-            className="nav-links sign"
-            onClick={closeMobileMenu}>
-            SIGN IN
-          </Button>
-        )}
-        {button && sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/"
-            buttonStyle="btn--primary"
-            className="nav-links sign"
-            onClick={logoutHandler}>
-            SIGN OUT
-          </Button>
-        )}
       </div>
     </nav>
   );
