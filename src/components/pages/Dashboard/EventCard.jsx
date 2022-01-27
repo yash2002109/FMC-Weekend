@@ -59,7 +59,7 @@ function EventCard(props) {
           {inCart(props.item.id) ? 'Added' : 'Add'}
           {inCart(props.item.id) ? '' : <img src="/add-cartPURPLE_OLD_1.svg" />}
         </button> */}
-        <div className="separator">
+        <div className={Classes.separator}>
           <div className={Classes.line} />
           <span>{props.type}</span>
           <div className={Classes.line} />
