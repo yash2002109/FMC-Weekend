@@ -24,6 +24,8 @@ import Team from './components/pages/Team/Teams';
 import Merchandise from './components/pages/Merchandise/Merchandise';
 import AllEvents from './components/pages/Events/MobileView/AllEvents';
 import Cart from './components/Cart';
+import DashBoard_2 from './components/pages/Dashboard/DashboardNew';
+import DashBoardNew from './components/pages/Dashboard/DashboardNew';
 function App() {
   const authCtx = useContext(AuthContext);
   if (window.innerWidth <= 1280) {
@@ -51,9 +53,10 @@ function App() {
           {/* {authCtx.isLoggedIn && <Route path="/dashboard" exact component={Dashboard} />} */}
           {/* {sessionStorage.getItem('isNewUser')==="true" && <Route path="/register" exact component={RegisterationForm} />} */}
           <PrivateRoute path="/register" component={RegisterationForm} />
-          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/dashboard" component={DashBoardNew} />
           <Route path="/team" exact component={Team} />
           <Route path="/cart" component={Cart} />
+          <Route path="/d" exact component={DashBoard_2}/>
         </Switch>
       </Router>
     </>
