@@ -65,10 +65,11 @@
 }
 
 .section_image {
-  padding-left: 5vw;
+  padding-left: 3vw;
   height: 100%;
-  width: 100%;
-  /* max-width: 30vw; */
+  object-fit: contain;
+  /* width: 100%; */
+  width: 40vw;
 }
 
 .section_title {
@@ -106,12 +107,15 @@
   display: flex;
   position: absolute;
   left: 0.5vw;
-  bottom: -10vh;
+  bottom: -5vh;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 33px;
+  /* line-height: 33px; */
+}
+.section_button a {
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   .column_2 {

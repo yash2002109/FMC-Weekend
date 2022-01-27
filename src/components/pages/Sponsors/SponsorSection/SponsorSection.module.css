@@ -5,10 +5,10 @@
   position: relative;
   padding: 0;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: Nunito Sans;
   font-weight: 300;
   font-size: 40px;
-  color: #080808;
+  color:#FCC907;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -16,6 +16,7 @@
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.5em;
+  margin-top: 20px;
   padding-bottom: 15px;
   position: relative;
 }
@@ -26,7 +27,22 @@
   bottom: 0;
   height: 5px;
   width: 55px;
-  background-color: #111;
+  background-color: #fff;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+h2 {
+  color: #FCC907;
+  font-family: Marcellus;
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin: 20px;
+  text-align: center;
 }
 .sponsor_title h1:after {
   content: "";
@@ -36,5 +52,5 @@
   height: 1px;
   width: 150%;
   max-width: 255px;
-  background-color: #333;
+  background-color: #fff;
 }

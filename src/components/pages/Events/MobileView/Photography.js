@@ -1,25 +1,36 @@
 import * as React from 'react';
 import EventCard from '../EventCard';
+import data from '../Data/data';
+import CartModal from '../CartModal';
+import { Link } from 'react-router-dom';
 
 function Photography() {
-
   return (
-    <section className="section">
-      <a href="/events" className="back-btn">Back</a>
-      <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard className="event" />
-          )}
+    <div>
+      <CartModal />
+      <section className="section">
+        <Link to="/events" className="back-btn">
+          Back
+        </Link>
+        <div className="card-container">
+          <div className="event-cards">
+            {data.photographyData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
+          </div>
         </div>
-
-        <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

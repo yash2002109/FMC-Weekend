@@ -10,6 +10,8 @@ import EventCard from './pages/Events/EventCard';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import Card from '../../src/components/pages/Sponsors/SponsorSection/Card';
+import data from './pages/Events/Data/data';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -20,7 +22,7 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}>
       {value === index && (
-        <Box sx={{ p: 3}} id='box1'>
+        <Box sx={{ p: 3 }} id="box1">
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,9 +50,9 @@ export default function VerticalTabs() {
     setValue(newValue);
   };
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex', height: "auto"}} className="box">
-          {/* <ArrowBackIosNewIcon onClick={collapseMenu} /> */}
-    <Tabs
+    <Box sx={{ flexGrow: 1, display: 'flex', height: 'auto' }} className="box">
+      {/* <ArrowBackIosNewIcon onClick={collapseMenu} /> */}
+      <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
@@ -64,102 +66,143 @@ export default function VerticalTabs() {
         <Tab label="Media" {...a11yProps(3)} />
         <Tab label="Design" {...a11yProps(4)} />
         <Tab label="Animation" {...a11yProps(5)} />
+        <Tab label="All Events and Workshops" {...a11yProps(6)} />
       </Tabs>
 
       <TabPanel value={value} index={0} className="tab-panel">
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard
-              title="Infocus"
-              content="Uphold the saying “A picture is worth a thousand words” by clicking captivating and surreal theme-based images. Of the themes provided, choose one or more themes and click a photograph best representing them."
-              img="https://fmcweekend-angrycder.vercel.app/assets/events/photog1.jpg"
-              className="event"
-            />
-          )}
+          <div className="event-cards">
+            {data.photographyData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
-
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
-          </div>
-          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
-          </div>
-          
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
+          <div className="event-cards">
+            {data.cineData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </TabPanel>
       <Divider />
       <TabPanel value={value} index={2}>
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
-          </div>
-          
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
+          <div className="event-cards">
+            {data.outreachData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </TabPanel>
       <Divider />
       <TabPanel value={value} index={3}>
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
-          </div>
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
+          <div className="event-cards">
+            {data.mediaData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </TabPanel>
       <Divider />
       <TabPanel value={value} index={4}>
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
-          </div>
-          
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
+          <div className="event-cards">
+            {data.designData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </TabPanel>
       <Divider />
       <TabPanel value={value} index={5}>
         <div className="card-container">
-        <div className="event-cards">
-          {Array(3).fill(
-            <EventCard />
-          )}
+          <div className="event-cards">
+            {data.animationData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
-            <div className="workshop-cards">
-          {Array(3).fill(
-            <EventCard type="Workshop" title="The Art of Cinematography" link="By John Watts" />
-          )}
+        </div>
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <div className="card-container">
+          <div className="all-events">
+            {data.allEventsData.map((item, index) => {
+              return (
+                <EventCard
+                  img={item.img}
+                  title={item.title}
+                  type={item.type}
+                  link={item.link}
+                  price={item.price}
+                  item={item}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </TabPanel>

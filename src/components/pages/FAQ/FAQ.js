@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
-import { Data } from './Data';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FiPlus, FiMinus } from 'react-icons/fi';
+import { Data } from './Data';
 import HeaderFAQ from '../../HeaderFAQ';
 import Footer from '../../Footer';
+// import './FAQ.css';
+
 const AccordionSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 100vh;
+  height: 120vh;
+  width: 98vw;
+  overflow-x: hidden;
   background: #1d033e;
+  @media (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 
 const Container = styled.div`
@@ -38,6 +45,7 @@ const Wrap = styled.div`
   h1 {
     padding: 15px;
     font-size: 20px;
+    text-align: center;
     font-family: Marcellus;
   }
   span {
@@ -64,12 +72,12 @@ const Dropdown = styled.div`
   }
 `;
 
-const Accordion = () => {
+function Accordion() {
   const [clicked, setClicked] = useState(false);
 
   const toggle = (index) => {
     if (clicked === index) {
-      //if clicked question is already active, then close it
+      // if clicked question is already active, then close it
       return setClicked(null);
     }
 
@@ -80,23 +88,21 @@ const Accordion = () => {
     <div className="HEADER">
       <HeaderFAQ />
       <IconContext.Provider value={{ color: '#FCC907', size: '25px' }}>
-        <AccordionSection>
+        <AccordionSection className="accordion">
           <Container>
-            {Data.map((item, index) => {
-              return (
-                <>
-                  <Wrap onClick={() => toggle(index)} key={index}>
-                    <h1>{item.question}</h1>
-                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
-                  </Wrap>
-                  {clicked === index ? (
-                    <Dropdown>
-                      <p>{item.answer}</p>
-                    </Dropdown>
-                  ) : null}
-                </>
-              );
-            })}
+            {Data.map((item, index) => (
+              <>
+                <Wrap onClick={() => toggle(index)} key={index}>
+                  <h1>{item.question}</h1>
+                  <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
+                </Wrap>
+                {clicked === index ? (
+                  <Dropdown>
+                    <p>{item.answer}</p>
+                  </Dropdown>
+                ) : null}
+              </>
+            ))}
           </Container>
         </AccordionSection>
       </IconContext.Provider>
@@ -105,6 +111,6 @@ const Accordion = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Accordion;

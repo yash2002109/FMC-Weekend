@@ -1,21 +1,27 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import React from 'react';
+import styled from 'styled-components';
+import './Card.css';
 
-import classes from "./Card.module.css";
-import image_2 from "./logo.jpg";
+const CardTitle = styled.h3`
+  transform: translateZ(55px);
+`;
 
-function Card() {
+function SponsorCard(props) {
   return (
-    <div className={classes.parent_wrapper}>
-        <div className={classes.card}>
-          <img src={image_2} alt="Avatar" style={{ width: '100%' }} />
-          <div className={classes.container}>
-            {/* <h4><b>John Doe</b></h4> */}
-            {/* <p>Architect  Engineer</p> */}
-            <h1>Media Sponsor</h1>
-          </div>
-        </div>
+    <div>
+      <div className="sponsorImg">
+        <a href={props.site} target="_blank" rel="noreferrer">
+          <img src={props.img} alt="unicorn" />
+        </a>
+
+        <h2>{props.name}</h2>
+        <h6>{props.sponsor}</h6>
+      </div>
     </div>
   );
 }
-
-export default Card;
+SponsorCard.defaultProps = {
+  img: 'https://wallpapercave.com/wp/wp2831956.png'
+};
+export default SponsorCard;
