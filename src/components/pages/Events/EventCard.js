@@ -13,7 +13,7 @@ import Tilt from 'react-tilt';
 
 import { useCart } from 'react-use-cart';
 
-const CardTitle = styled.h3`
+const CardTitle = styled.h2`
   transform: translateZ(55px);
 `;
 
@@ -47,7 +47,7 @@ function EventCard(props) {
     <Tilt className="card" options={options}>
       <div className="card-div">
         <img src={props.img} alt="unicorn" className="card-img" />
-
+        <h3>₹ {props.price}</h3>
         <button
           className="cart-btn"
           onClick={() => {

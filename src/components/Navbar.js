@@ -62,15 +62,6 @@ function Navbar() {
               EVENTS
             </NavLink>
           </li>
-          <li className="nav-item first_item">
-            <NavLink
-              to="/passes"
-              className="nav-links"
-              activeClassName="target"
-              onClick={closeMobileMenu}>
-              PASSES
-            </NavLink>
-          </li>
           <li className="nav-item">
             <NavLink
               to="/team"
