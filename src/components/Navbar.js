@@ -101,6 +101,14 @@ function Navbar() {
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
+        <div className="navbar_cart">
+        <NavLink to="/cart">
+              <button toLink="/cart" className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'} onClick={closeMobileMenu}>
+                <span id="quantity">{totalItems} </span>
+                <i className="fas fa-shopping-cart"></i>
+              </button>
+            </NavLink>
+        </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item first_item">
             <NavLink
@@ -151,15 +159,14 @@ function Navbar() {
               </Button>
             )}
           </li>
-          <li className="nav-item">
-            <NavLink to="/cart">
-              <button toLink="/cart" className="cartBtn" onClick={closeMobileMenu}>
+          <NavLink to="/cart">
+              <button toLink="/cart" className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'} onClick={closeMobileMenu}>
                 <span id="quantity">{totalItems} </span>
                 <i className="fas fa-shopping-cart"></i>
               </button>
             </NavLink>
-          </li>
           <li className="nav-item">
+
             {button && !sessionStorage.getItem('tokenID') && (
               <Button
                 isInternalLink
@@ -175,8 +182,7 @@ function Navbar() {
                 isInternalLink
                 toLink="/dashboard"
                 buttonStyle="btn--primary"
-                className="nav-links sign"
-              >
+                className="nav-links sign">
                 Dashboard
               </Button>
             )}

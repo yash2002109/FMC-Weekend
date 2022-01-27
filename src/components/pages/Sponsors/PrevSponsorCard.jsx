@@ -5,12 +5,12 @@ const CardTitle = styled.h3`
   transform: translateZ(55px);
 `;
 
-function SponsorCard(props) {
+function PrevSponsorCard(props) {
   return (
     <div className="sponsor-card">
       <div>
-        <div className="sponsor_card_img">          
-          <img src={props.img} alt="unicorn" className="sponsorcardImg"/>
+        <div className="">
+          <img src={props.img} alt="unicorn" className="sponsorcardImg" />
         </div>
         <CardTitle className="cardTitle">{props.name}</CardTitle>
       </div>
@@ -20,4 +20,4 @@ function SponsorCard(props) {
   );
 }
 
-export default SponsorCard;
+export default PrevSponsorCard;
