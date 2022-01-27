@@ -23,10 +23,12 @@ import PrivateRoute from './components/PrivateRoute';
 import Team from './components/pages/Team/Teams';
 import Merchandise from './components/pages/Merchandise/Merchandise';
 import AllEvents from './components/pages/Events/MobileView/AllEvents';
-
+import Cart from './components/Cart';
 function App() {
   const authCtx = useContext(AuthContext);
-
+  if (window.innerWidth <= 1280) {
+    document.body.style.backgroundImage = 'none';
+  }
   return (
     <>
       <Router>
@@ -51,8 +53,7 @@ function App() {
           <PrivateRoute path="/register" component={RegisterationForm} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route path="/team" exact component={Team} />
-          <Route path="/merchandise" exact component={Merchandise} />
-
+          <Route path="/cart" component={Cart} />
         </Switch>
       </Router>
     </>
