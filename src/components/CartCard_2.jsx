@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 // import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 // import Typography from '@mui/material/Typography';
-import './events.css';
+import './CartCard_2.css';
 // import { Button } from '@mui/material';
 // import unicorn from "./assets/test.png";
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
 // import addToCart from './CartModal';
-
+import CloseIcon from '@mui/icons-material/Close';
 import { useCart } from 'react-use-cart';
 
 const CardTitle = styled.h2`
@@ -51,12 +51,13 @@ function EventCard(props) {
         <button
           className="cart-btn"
           onClick={() => {
-            addItem(props.item);
+            removeItem(props.item.id);
             // change();
-          }}
-          disabled={inCart(props.item.id)}>
-          {inCart(props.item.id) ? 'Added' : 'Add'}
-          {inCart(props.item.id) ? '' : <img src="/add-cartPURPLE_OLD_1.svg" />}
+          }}>
+          {/* {inCart(props.item.id) ? "Added" : "Add"} 
+          
+          {inCart(props.item.id) ? "" : <img src="/add-cartPURPLE_OLD_1.svg" />}  */}
+          <CloseIcon />
         </button>
         <div className="separator">
           <div className="line" />

@@ -53,8 +53,10 @@
 .cartBtn {
   position: absolute;
   top: 25px;
-  margin-left: 100px;
+  right: 160px;
+  /* margin-left: 100px; */
   color: #FCC907;
+  /* color: white; */
   background: transparent;
   font-size: 1.4em;
   outline: none;
@@ -204,4 +206,13 @@
     color: #242424;
     transition: 250ms;
   }
+  .cartBtn {
+    top: 23px !important;
+    right: 60px;
+  }
+}
+
+
+.empty_cart{
+  color: white !important;  
 }

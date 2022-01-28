@@ -12,7 +12,7 @@ const AccordionSection = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   overflow-x: hidden;
   background: #1d033e;
@@ -25,7 +25,11 @@ const Container = styled.div`
   position: absolute;
   top: 5%;
   color: #27094b;
-  max-width: 1500px;
+  max-width: 1000px;
+  width: 60vw;
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
 `;
 
 const Wrap = styled.div`

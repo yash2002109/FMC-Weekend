@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 // import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 // import Typography from '@mui/material/Typography';
-import './events.css';
+// import './Events.css';
 // import { Button } from '@mui/material';
 // import unicorn from "./assets/test.png";
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
+import Classes from './Events.module.css';
 // import addToCart from './CartModal';
 
 import { useCart } from 'react-use-cart';
@@ -44,11 +45,11 @@ function EventCard(props) {
     scale: 1.06
   };
   return (
-    <Tilt className="card" options={options}>
-      <div className="card-div">
-        <img src={props.img} alt="unicorn" className="card-img" />
-        <h3>₹ {props.price}</h3>
-        <button
+    <Tilt className={Classes.card} options={options}>
+      <div className={Classes.card_div}>
+        <img src={props.img} alt="unicorn" className={Classes.card_img} />
+        {/* <h3>₹ {props.price}</h3> */}
+        {/* <button
           className="cart-btn"
           onClick={() => {
             addItem(props.item);
@@ -57,18 +58,18 @@ function EventCard(props) {
           disabled={inCart(props.item.id)}>
           {inCart(props.item.id) ? 'Added' : 'Add'}
           {inCart(props.item.id) ? '' : <img src="/add-cartPURPLE_OLD_1.svg" />}
-        </button>
-        <div className="separator">
-          <div className="line" />
-          <h2>{props.type}</h2>
-          <div className="line" />
+        </button> */}
+        <div className={Classes.separator}>
+          <div className={Classes.line} />
+          <span>{props.type}</span>
+          <div className={Classes.line} />
         </div>
-        <CardTitle className="card-title">{props.title}</CardTitle>
-        <h2 className="prizes">
+        <CardTitle className={Classes.card_title}>{props.title}</CardTitle>
+        <h2 className={Classes.prizes}>
           PRIZES WORTH <br></br>
           <b>{props.prize}</b>
         </h2>
-        <a href={props.link} target="_blank" className="btn1" rel="noreferrer">
+        <a href={props.link} target="_blank" className={Classes.btn1} rel="noreferrer">
           {props.ps}
         </a>
       </div>
