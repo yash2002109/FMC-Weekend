@@ -36,14 +36,15 @@ function EventCard(props) {
   }
 
   async function addItemToCart(item) {
-    console.log("yash");
+    // console.log('yash');
     const userID = sessionStorage.getItem('userID');
     // e.preventDefault();
     let obj = {
       userID: userID,
       cartItem: item
     };
-    const res = await fetch('api/cart', {
+    
+    const res = await fetch('/api/cart', {
       method: 'POST',
       body: JSON.stringify(obj),
       headers: {
@@ -51,8 +52,19 @@ function EventCard(props) {
       }
     });
     console.log({ obj });
+    console.log(JSON.stringify(obj));
     const data = await res.json();
     console.log(data);
+
+    if (data.status=="Success") {
+      addItem(item);
+    } else {
+      alert('Unable to add item to cart! Try again later');
+    }
+
+    // post not working because status isn't upadated in data.js;
+
+    //only for show purposed
     // window.location.href = "/register";
   }
 
@@ -74,8 +86,8 @@ function EventCard(props) {
             className="cart-btn"
             onClick={() => {
               // send post request to database
-              
-              addItemToCart(props.item)
+
+              addItemToCart(props.item);
               // addItem(props.item);
 
               // change();

@@ -10,6 +10,8 @@ import Modal from '@mui/material/Modal';
 import Footer from './Footer';
 import CheckoutButton from './CheckoutButton/CheckoutButton';
 import CartCard_2 from './CartCard_2';
+import { useState, useEffect } from 'react';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -30,9 +32,79 @@ function Cart(props) {
       alert('Please Sign in first');
     }
   };
+  const [cartItems, setCartItems] = useState([]);
+  
+
   const handleClose = () => setOpen(false);
   const { isEmpty, items, totalItems, cartTotal, removeItem, emptyCart, updateItemQuantity } =
     useCart();
+  useEffect(() => {
+    const getCartItems = async () => {
+      // setIsLoading(true);
+      const token = sessionStorage.getItem('tokenID');
+      try {
+        const res = await fetch('/api/user', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            token: token
+          }
+        });
+        const data = await res.json();
+        // console.log(data);
+
+        if (data.message === 'success') {
+          console.log(data);
+          // console.log(data.user.userID.userCart.cartItems);
+          if (data.user.userID) {
+            setCartItems(data.user.userID.userCart.cartItems);
+          } else {
+            setCartItems(data.user.userCart.cartItems);
+          }
+        }
+      } catch (e) {
+        console.log(e);
+        alert('Error with authentication, login again');
+      }
+    };
+    getCartItems();
+    // console.log(isTokenValid());
+  }, []);
+
+async function checkoutHandler(e){
+    let paymentAmount=0;
+    for (const item of cartItems) {
+      if (item.verifyStatus==false){
+        paymentAmount += item.price; 
+      }      
+    }
+    console.log(paymentAmount);   
+
+    e.preventDefault();
+    const obj = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      phone: e.target[2].value,      
+      amount: paymentAmount,
+      redirect_url: window.location.origin+"/dashboard"
+    }
+    // console.log(obj);
+    
+    const res = await fetch('api/pay', {
+      method: 'POST',
+      body: JSON.stringify(obj),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log({ obj });
+    const data = await res.json();
+    console.log(data);
+    
+  }
+
+
+
   return (
     <section className="cart-page">
       <h1>Cart</h1>
@@ -51,19 +123,21 @@ function Cart(props) {
           </div>
         </a> */}
         <div className="cart_cards">
-          {items.map((item, index) => {
+          {cartItems.map((item, index) => {
             return (
               <div key={index} className="cart-container">
                 <CartCard_2
                   className="cart-card"
                   img={item.img}
                   title={item.title}
-                  type={item.type}
+                  type={item.Type}
                   link={item.link}
                   price={item.price}
                   prize={item.prize}
                   item={item}
                   key={index}
+                  verified={item.verifyStatus}
+                  mongooseId={item._id}
                 />
               </div>
             );
@@ -82,13 +156,13 @@ function Cart(props) {
 
             <div className="register-form">
               <h1 className="reg-text">register</h1>
-              <form className="reg-form" action="https://www.instagram.com/simeonleni">
+              <form className="reg-form" action="https://www.instagram.com/simeonleni" onSubmit={checkoutHandler}>
                 <div className="text">
-                  <input type="text" placeholder="Enter your name" />
+                  <input type="text" placeholder="Enter your name" required/>
                   <hr />
-                  <input type="email" placeholder="Enter your email" />
+                  <input type="email" placeholder="Enter your email" required/>
                   <hr />
-                  <input type="phone" placeholder="Enter your Phone No" />
+                  <input type="phone" placeholder="Enter your Phone No" required/>
                   <br></br>
                   <label htmlFor="cart-amount">
                     <h3>Total Price = ₹ {cartTotal} </h3>

@@ -66,7 +66,7 @@ function DashBoardNew() {
               // timesReferred: data.user.norefcode,
               cartItems: data.user.userID.userCart.cartItems
             }));
-            sessionStorage.setItem('userID', data.user.userID.userCart._id);
+            sessionStorage.setItem('userID', data.user.userID._id);
           } else {
             setUserData((prevState) => ({
               // ...prevState,
@@ -89,6 +89,8 @@ function DashBoardNew() {
       } catch (e) {
         console.log(e);
         alert('Error with authentication, login again');
+        sessionStorage.clear();
+      
       }
       await sleep(3000);
       setIsLoading(false);
