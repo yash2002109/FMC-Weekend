@@ -2,7 +2,7 @@ import './Cart.css';
 import { useCart } from 'react-use-cart';
 import EventCard from './pages/Events/EventCard';
 import { NavLink } from 'react-router-dom';
-import { Button } from '../components/Button';
+// import { Button } from '../components/Button';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -11,6 +11,8 @@ import Footer from './Footer';
 import CheckoutButton from './CheckoutButton/CheckoutButton';
 import CartCard_2 from './CartCard_2';
 import { useState, useEffect } from 'react';
+// import Button from './pages/LandingPage/Section/Button/Button';
+import Button from './Button_2';
 
 const style = {
   position: 'absolute',
@@ -206,7 +208,7 @@ function Cart(props) {
               See you in large numbers at the fest!✨
             </p>
             <a href="https://forms.gle/Su8HRznfUAhfzjPcA" target="_blank" rel="noreferrer">
-              Google Form
+              <Button>Registeration Form</Button>
             </a>
           </Typography>
         </Box>
