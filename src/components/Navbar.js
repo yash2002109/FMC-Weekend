@@ -172,7 +172,7 @@ function Navbar() {
             </button>
           </NavLink>
           <li className="nav-item">
-            {(button && sessionStorage.getItem('isLoggedIn')==true) ? (
+            {(button && sessionStorage.getItem('isLoggedIn')=='true') ? (
               <Button
                 isInternalLink
                 toLink="/dashboard"
