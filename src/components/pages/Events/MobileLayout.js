@@ -1,6 +1,5 @@
 import React from 'react';
 import './events.css';
-import CartModal from './CartModal';
 import { Link } from 'react-router-dom';
 
 function MobileLayout() {
@@ -56,15 +55,6 @@ function MobileLayout() {
         <Link to="/events/animation">
           <li>
             Animation{' '}
-            <span
-              className="iconify"
-              data-icon="mdi-light:chevron-right"
-              data-inline="false"></span>
-          </li>
-        </Link>
-        <Link to="/events/allevents">
-          <li>
-            All Events & Workshops{' '}
             <span
               className="iconify"
               data-icon="mdi-light:chevron-right"

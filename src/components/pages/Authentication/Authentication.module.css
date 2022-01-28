@@ -2,7 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 40vh;
-
+    background: #1d033e;
+    min-height: 100vh;
 }
-
+.authenticateButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+}

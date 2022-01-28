@@ -3,12 +3,10 @@ import MobileLayout from './MobileLayout';
 import SideBar from '../../Sidebar';
 import './events.css';
 import Footer from '../../Footer';
-import CartModal from './CartModal';
 function Events() {
   return (
-    <div>
+    <div className="event_page">
       <div className="sidebar">
-        <CartModal />
         <SideBar />
         <Footer />
       </div>
