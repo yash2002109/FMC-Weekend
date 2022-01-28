@@ -118,6 +118,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -138,6 +139,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -158,6 +160,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -178,6 +181,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -198,6 +202,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />

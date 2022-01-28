@@ -32,28 +32,6 @@ function landingPage() {
   return (
     <div className={Classes.landing_page}>
       {/* <h1> Landing Page</h1> */}
-      <div className={Classes.login_button}>
-        {/* <Button /> */}
-        {button && !sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/authentication"
-            buttonStyle="btn--primary"
-            className="nav-links sign">
-            SIGN IN
-          </Button>
-        )}
-        {button && sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/"
-            buttonStyle="btn--primary"
-            className="nav-links sign"
-            onClick={logoutHandler}>
-            SIGN OUT
-          </Button>
-        )}
-      </div>
 
       <Banner imagePath="/HERO-WO-LOGO-011.svg" />
 
