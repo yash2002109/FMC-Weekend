@@ -48,16 +48,18 @@ function EventCard(props) {
       <div className="card-div">
         <img src={props.img} alt="unicorn" className="card-img" />
         <h3>₹ {props.price}</h3>
-        <button
-          className="cart-btn"
-          onClick={() => {
-            addItem(props.item);
-            // change();
-          }}
-          disabled={inCart(props.item.id)}>
-          {inCart(props.item.id) ? 'Added' : 'Add'}
-          {inCart(props.item.id) ? '' : <img src="/add-cartPURPLE_OLD_1.svg" />}
-        </button>
+        {sessionStorage.getItem('isLoggedIn') == 'true' && (
+          <button
+            className="cart-btn"
+            onClick={() => {
+              addItem(props.item);
+              // change();
+            }}
+            disabled={inCart(props.item.id)}>
+            {inCart(props.item.id) ? 'Added' : 'Add'}
+            {inCart(props.item.id) ? '' : <img src="/add-cartPURPLE_OLD_1.svg" />}
+          </button>
+        )}
         <div className="separator">
           <div className="line" />
           <h2>{props.type}</h2>

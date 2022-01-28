@@ -103,13 +103,15 @@ function Navbar() {
         </div>
         <div className="navbar_cart">
           <NavLink to="/cart">
-            <button
-              toLink="/cart"
-              className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'}
-              onClick={closeMobileMenu}>
-              <span id="quantity">{totalItems} </span>
-              <i className="fas fa-shopping-cart"></i>
-            </button>
+            {button && sessionStorage.getItem('isLoggedIn') == 'true' && (
+              <button
+                toLink="/cart"
+                className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'}
+                onClick={closeMobileMenu}>
+                <span id="quantity">{totalItems} </span>
+                <i className="fas fa-shopping-cart"></i>
+              </button>
+            )}
           </NavLink>
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
