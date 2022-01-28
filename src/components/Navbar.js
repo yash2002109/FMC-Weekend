@@ -162,15 +162,7 @@ function Navbar() {
               </Button>
             )}
           </li> */}
-          <NavLink to="/cart">
-            <button
-              toLink="/cart"
-              className={totalItems ? 'cartBtn' : 'cartBtn empty_cart'}
-              onClick={closeMobileMenu}>
-              <span id="quantity">{totalItems} </span>
-              <i className="fas fa-shopping-cart"></i>
-            </button>
-          </NavLink>
+
           <li className="nav-item">
             {button && sessionStorage.getItem('isLoggedIn') == 'true' ? (
               <Button
@@ -185,7 +177,7 @@ function Navbar() {
                 isInternalLink
                 toLink="/authentication"
                 buttonStyle="btn--primary"
-                className="nav-links sign"
+                className="sign"
                 onClick={closeMobileMenu}>
                 SIGN IN
               </Button>
