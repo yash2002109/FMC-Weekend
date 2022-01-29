@@ -1,10 +1,16 @@
+.wrapper {
+  background-color: #1b083d;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
 .sidebar {
   height: 100%;
-  width: calc(200px + 10vw);
-  /* min-width: 200px; */
+  max-width: 30vw;
   position: fixed;
   top: 20;
-  left: 0;
+  left: 6vw;
+  width: 300px;
   background: transparent;
   overflow-x: hidden;
   padding-top: 20px;
@@ -16,21 +22,22 @@
   scrollbar-color: #FCC907;
 }
 .sidebar h1 {
-  font-size: 1.6em;
-  font-family: Nunito Sans;
+  font-size: 1.2em;
+  font-family: Marcellus;
 }
 .sidebar a {
   padding: 15px;
   text-decoration: none;
   color: #fff;
+  font-family: Marcellus;
   display: block;
+  margin-left: 50px;
   list-style: none;
 }
-
-.sidebar a:hover {
+.sidebar .target {
   color: #FCC907;
 }
-.sidebar a:focus {
+.sidebar a:hover {
   color: #FCC907;
 }
 .main {
@@ -74,6 +81,7 @@
   .sidebar a {
     text-align: center;
     float: none;
+    margin-left: 0px;
   }
 
   div.main {

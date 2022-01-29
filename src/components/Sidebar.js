@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import EventCard from './pages/Events/EventCard';
+import { makeStyles } from '@material-ui/core/styles';
 // import WorkshopCard from './pages/Events/WorkshopCard';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -42,7 +43,13 @@ function a11yProps(index) {
     'aria-controls': `vertical-tabpanel-${index}`
   };
 }
-
+const useStyles = makeStyles((theme) => ({
+  tabs: {
+    '& .MuiTabs-indicator': {
+      background: '#FCC907'
+    }
+  }
+}));
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0);
 
@@ -58,7 +65,19 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 3, borderColor: '#FCC907', fontSize: '38px', fontColor: 'black' }}
+        sx={{
+          borderRight: 3,
+          borderColor: '#FCC907',
+          fontSize: '38px',
+          fontColor: 'black',
+          '& .MuiTabs-indicator': {
+            background: '#FCC907',
+            width: '0px'
+          },
+          '& .MuiButtonBase-root-MuiTab-root': {
+            alignItems: 'flex-start'
+          }
+        }}
         className="tabs">
         <Tab label="Photography" {...a11yProps(0)} />
         <Tab label="Cinematography" {...a11yProps(1)} />
@@ -66,7 +85,6 @@ export default function VerticalTabs() {
         <Tab label="Media" {...a11yProps(3)} />
         <Tab label="Design" {...a11yProps(4)} />
         <Tab label="Animation" {...a11yProps(5)} />
-        <Tab label="All Events and Workshops" {...a11yProps(6)} />
       </Tabs>
 
       <TabPanel value={value} index={0} className="tab-panel">
@@ -80,6 +98,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -99,6 +118,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -119,6 +139,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -139,6 +160,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -159,6 +181,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -179,25 +202,7 @@ export default function VerticalTabs() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
-                  item={item}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        <div className="card-container">
-          <div className="all-events">
-            {data.allEventsData.map((item, index) => {
-              return (
-                <EventCard
-                  img={item.img}
-                  title={item.title}
-                  type={item.type}
-                  link={item.link}
-                  price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />

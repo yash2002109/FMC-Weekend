@@ -23,7 +23,7 @@ const menuItems = {
   sponsor_8: null,
   sponsor_9: null,
   sponsor_10: null,
-  sponsor_11: null,
+  sponsor_11: null
 };
 
 const menuItemNames = {
@@ -38,7 +38,7 @@ const menuItemNames = {
   sponsor_8: 'Public Relations',
   sponsor_9: 'Social Media',
   sponsor_10: 'Tech',
-  sponsor_11: 'Secretaries',
+  sponsor_11: 'Secretaries'
 };
 
 /*
@@ -59,11 +59,11 @@ function Menu() {
    * on our user's scroll depth
    */
   useEffect(() => {
-    getAnchorPoints();
+    setTimeout(getAnchorPoints, 1000);
     const observer = new MutationObserver(getAnchorPoints);
     observer.observe(document.getElementById('root'), {
       childList: true,
-      subtree: true,
+      subtree: true
     });
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -132,9 +132,10 @@ function Menu() {
       //   break
       // }
 
-      if (menuItems[section] < curPos) {
+      if (menuItems[section] < curPos + 40) {
         // curSection = section;
         setActiveItem(section);
+        console.log(section);
         console.log(menuItems);
         console.log(curPos);
         // break;
