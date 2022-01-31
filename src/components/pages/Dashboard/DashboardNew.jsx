@@ -52,7 +52,7 @@ function DashBoardNew() {
         // on valid, data also has user.email, user.name, user.isNewUser, user.role
         if (data.message === 'success') {
           console.log(data);
-          console.log(data.user.userID.userCart.cartItems);
+          //console.log(data.user.userID.userCart.cartItems);
           if (data.user.userID) {
             setUserData((prevState) => ({
               // ...prevState,
