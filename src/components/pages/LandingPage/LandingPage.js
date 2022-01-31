@@ -6,9 +6,7 @@ import Section from './Section/Section';
 import Classes from './LandingPage.module.css';
 import Footer from '../../Footer';
 import { Button } from '../../Button';
-
 import closeMobileMenu from '../../Navbar';
-
 
 function landingPage() {
   const [button, setButton] = useState(true);
@@ -34,35 +32,18 @@ function landingPage() {
   return (
     <div className={Classes.landing_page}>
       {/* <h1> Landing Page</h1> */}
-      <div className={Classes.login_button}>
-        {/* <Button /> */}
-        {button && !sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/authentication"
-            buttonStyle="btn--primary"
-            className="nav-links sign">
-            SIGN IN
-          </Button>
-        )}
-        {button && sessionStorage.getItem('tokenID') && (
-          <Button
-            isInternalLink
-            toLink="/"
-            buttonStyle="btn--primary"
-            className="nav-links sign"
-            onClick={logoutHandler}>
-            SIGN OUT
-          </Button>
-        )}
-      </div>
 
-      <Banner imagePath="/Rectangle_29.png" />
+      <Banner imagePath="/HERO-WO-LOGO-011.svg" />
+
+      <div className={Classes.texture_bg}></div>
+      <img src="/SECT_DIV_LINE.svg" alt="line" className={Classes.line_sep} />
       <Section
         title="ABOUT US"
         imagePath="/clubs_2X.png"
         buttonText="REGISTER"
-        link="/authentication">
+        link="/authentication"
+        className="about-img">
+        <img src="/LINEE.svg" alt="line" className={Classes.about_sep} />
         The long-awaited exemplary 8th edition of FMC Weekend is finally here! This time we not only
         bring to you a plethora of exciting events that will put your creative mettle to test, but
         also some awe-inspiring workshops by the notable and established names of the digital arts
@@ -70,8 +51,9 @@ function landingPage() {
         experience some of the most ecstatic moments of your lives as the passion for digital arts
         conjures within you.
       </Section>
-
-      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="KNOW MORE" link="/events">
+      <img src="/SECT_DIV_LINE.svg" alt="line" className={Classes.line_sep1} />
+      <Section title="EVENTS" imagePath="/EVENTSS.png" buttonText="SEE ALL EVENTS" link="/events">
+        <img src="/LINEE.svg" alt="line" className={Classes.event_sep} />
         The electrifying eighth edition of FMC Weekend brings to you an opportunity to compete with
         your contemporaries and establish your talent. Participate in events of creative writing,
         photography, cinematography, design and animation, discover your true potential and watch

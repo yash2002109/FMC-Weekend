@@ -1,11 +1,26 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Fragment, useContext, useEffect, useState } from 'react';
 import AuthContext from '../../../store/auth-context';
 import Loading from '../../Loading';
 import Classes from './Dashboard.module.css';
-
+import { Button } from '../../Button';
 function Dashboard() {
   const [isLoading, setIsLoading] = useState(false);
   const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+  const authCtx = useContext(AuthContext);
+
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const logoutHandler = () => {
+    sessionStorage.clear();
+    window.location.href = '/';
+    closeMobileMenu();
+  };
   const [userData, setUserData] = useState({
     name: 'John Doe',
     email: 'foo@foo.com',
@@ -51,6 +66,7 @@ function Dashboard() {
               refCode: data.user.ref_code,
               timesReferred: data.user.norefcode
             }));
+            sessionStorage.setItem
           } else {
             setUserData((prevState) => ({
               // ...prevState,
@@ -60,7 +76,7 @@ function Dashboard() {
               phone: data.user.number,
               year: data.user.yearOfStudy,
               instaHandle: data.user.instaHandle,
-              userType: data.user.role,
+              userType: data.user.role
               // refCode: data.user.ref_code
               // timesReferred:
             }));
@@ -90,11 +106,11 @@ function Dashboard() {
               {userData.userType == 0 && (
                 <Fragment>
                   <h1>
-                    <a href="events">Events</a>
+                    <a href="#">Events</a>
                   </h1>
                   <br />
                   <h1>
-                    <a href="merchandise">Merchandise</a>
+                    <a href="#">Merchandise</a>
                   </h1>
                 </Fragment>
               )}
@@ -162,20 +178,6 @@ function Dashboard() {
                       <td>:</td>
                       <td>{userData.userType == 2 ? 'Campus Ambassador' : 'Participant'}</td>
                     </tr>
-                    {userData.refCode && <tr>
-                      <td>
-                        <strong>Referral Code</strong>
-                      </td>
-                      <td>:</td>
-                      <td>{userData.refCode}</td>
-                    </tr>}
-                    {userData.refCode && <tr>
-                      <td>
-                        <strong>People Referred</strong>
-                      </td>
-                      <td>:</td>
-                      <td>{userData.timesReferred}</td>
-                    </tr>}
                   </tbody>
                 </table>
               </div>

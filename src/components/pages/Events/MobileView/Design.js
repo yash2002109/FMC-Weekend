@@ -2,12 +2,10 @@ import * as React from 'react';
 import EventCard from '../EventCard';
 import data from '../Data/data';
 import { Link } from 'react-router-dom';
-import CartModal from '../CartModal';
-
+import Footer from '../../../Footer';
 function Design() {
   return (
-    <div>
-      <CartModal />
+    <div style={{ background: '#1D033E', overflow: 'hidden' }}>
       <section className="section">
         <Link to="/events" className="back-btn">
           Back
@@ -22,6 +20,7 @@ function Design() {
                   type={item.type}
                   link={item.link}
                   price={item.price}
+                  prize={item.prize}
                   item={item}
                   key={index}
                 />
@@ -30,6 +29,7 @@ function Design() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
